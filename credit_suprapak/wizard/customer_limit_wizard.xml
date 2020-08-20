@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record id="customer_limit_wizard_form" model="ir.ui.view">
+        <field name="name">customer.limit.wizard.form</field>
+        <field name="model">customer.limit.wizard</field>
+        <field name="inherit_id" ref="dev_customer_credit_limit.view_customer_limit_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='set_credit_limit_state']" position="after">
+                <button string="Send mail" name="button_send_mail" type="object" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

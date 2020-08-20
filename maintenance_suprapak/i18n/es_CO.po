@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* maintenance_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-17 16:13+0000\n"
+"PO-Revision-Date: 2020-07-17 16:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: maintenance_suprapak
+#: model_terms:ir.actions.act_window,help:maintenance_suprapak.responsable_technic_action
+msgid "Add a new Technic"
+msgstr "Agrega un nuevo Tecnico"
+
+#. module: maintenance_suprapak
+#: model_terms:ir.actions.act_window,help:maintenance_suprapak.type_of_failure_action
+msgid "Add a new equipment category"
+msgstr "Agregue una nueva categoria para el equipo"
+
+#. module: maintenance_suprapak
+#: model_terms:ir.ui.view,arch_db:maintenance_suprapak.type_of_failure_view_tree
+msgid "Assign To User"
+msgstr "Asignación a Usuario"
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__create_uid
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__create_date
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__display_name
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__document
+msgid "Document"
+msgstr "Documento de Identificación"
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__email
+msgid "Email"
+msgstr "Correo electronico"
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__maintenance_equipment_id
+msgid "Equipment"
+msgstr "Equipo"
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__id
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__id
+msgid "ID"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic____last_update
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__write_uid
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__write_date
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model,name:maintenance_suprapak.model_maintenance_request
+msgid "Maintenance Request"
+msgstr "Petición de mantenimiento"
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_responsable_technic__name
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_type_of_failure__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: maintenance_suprapak
+#: model:ir.actions.act_window,name:maintenance_suprapak.responsable_technic_action
+#: model:ir.ui.menu,name:maintenance_suprapak.menu_responsable_technic
+#: model_terms:ir.ui.view,arch_db:maintenance_suprapak.responsable_technic_view_tree
+msgid "Responsable Technic"
+msgstr "Tecnico Responsable"
+
+#. module: maintenance_suprapak
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_maintenance_request__responsable_technic_id
+msgid "Technic"
+msgstr "Tecnico"
+
+#. module: maintenance_suprapak
+#: model:ir.actions.act_window,name:maintenance_suprapak.type_of_failure_action
+#: model:ir.model.fields,field_description:maintenance_suprapak.field_maintenance_request__failure_id
+#: model:ir.ui.menu,name:maintenance_suprapak.menu_maintenance_type_failure
+msgid "Type of failure"
+msgstr "Tipo de falla"
+
+#. module: maintenance_suprapak
+#: model:ir.model,name:maintenance_suprapak.model_responsable_technic
+msgid "model contains the responsable Technic"
+msgstr ""
+
+#. module: maintenance_suprapak
+#: model:ir.model,name:maintenance_suprapak.model_type_of_failure
+msgid "model for the types of failures"
+msgstr ""

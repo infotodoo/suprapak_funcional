@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-27 22:18+0000\n"
+"PO-Revision-Date: 2020-03-27 22:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__name
+msgid "Caused by Cut"
+msgstr "Causado por Corte"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__name
+msgid "Caused by Paste"
+msgstr "Causado por Pegado"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__name
+msgid "Caused by Print"
+msgstr "Causado por IMpresión"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__name
+msgid "Caused by Technic"
+msgstr "Causado por Tecnico"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__complaint__product
+msgid "Complaint By Product"
+msgstr "Queja o reclamo por producto"
+
+#. module: helpdesk_suprapak
+#: model:ir.model,name:helpdesk_suprapak.model_service
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__name
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__complaint__service
+msgid "Complaint By Service"
+msgstr "Queja o reclamo por servicio"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__complaint
+msgid "Coplaint Type"
+msgstr "Tipo de queja o reclamo"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__create_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__create_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__create_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__create_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__create_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__create_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__create_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__create_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__create_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__create_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: helpdesk_suprapak
+#: model:ir.actions.act_window,name:helpdesk_suprapak.action_cut
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__cut_id
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__pqrs__cut
+#: model:ir.ui.menu,name:helpdesk_suprapak.menu_cut
+msgid "Cut"
+msgstr "Corte"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__display_name
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__display_name
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__display_name
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__display_name
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__display_name
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: helpdesk_suprapak
+#: model:ir.model,name:helpdesk_suprapak.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr "Tiquete del Servicio de Asistencia"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__id
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__id
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__id
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__id
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__id
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__id
+msgid "ID"
+msgstr ""
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut____last_update
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste____last_update
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print____last_update
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind____last_update
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service____last_update
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__write_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__write_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__write_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__write_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__write_uid
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__write_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__write_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__write_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__write_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__write_date
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__pqrs
+msgid "PQRS by Product"
+msgstr "Queja o reclamo por producto"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__service_id
+msgid "PQRS by Service"
+msgstr "Queja o reclamo por servicio"
+
+#. module: helpdesk_suprapak
+#: model:ir.model,name:helpdesk_suprapak.model_cut
+msgid "PSRS by Cut"
+msgstr "Queja o reclamo por corte"
+
+#. module: helpdesk_suprapak
+#: model:ir.model,name:helpdesk_suprapak.model_paste
+msgid "PSRS by Paste"
+msgstr "Queja o reclamo por pegado"
+
+#. module: helpdesk_suprapak
+#: model:ir.model,name:helpdesk_suprapak.model_print
+msgid "PSRS by Print"
+msgstr "Queja o reclamo por impresión"
+
+#. module: helpdesk_suprapak
+#: model:ir.model,name:helpdesk_suprapak.model_technic
+msgid "PSRS by Technic"
+msgstr "Queja o reclamo por tecnico"
+
+#. module: helpdesk_suprapak
+#: model:ir.actions.act_window,name:helpdesk_suprapak.action_paste
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__paste_id
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__pqrs__paste
+#: model:ir.ui.menu,name:helpdesk_suprapak.menu_paste
+msgid "Paste"
+msgstr "Pegado"
+
+#. module: helpdesk_suprapak
+#: model:ir.actions.act_window,name:helpdesk_suprapak.action_print
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__print_id
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__pqrs__print
+#: model:ir.ui.menu,name:helpdesk_suprapak.menu_print
+msgid "Print"
+msgstr "Impreso"
+
+#. module: helpdesk_suprapak
+#: model:ir.actions.act_window,name:helpdesk_suprapak.action_rewind
+#: model:ir.model,name:helpdesk_suprapak.model_rewind
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__rewind_id
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_rewind__name
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__pqrs__rewind
+#: model:ir.ui.menu,name:helpdesk_suprapak.menu_rewind
+msgid "Rewind"
+msgstr "Rebobine"
+
+#. module: helpdesk_suprapak
+#: model:ir.actions.act_window,name:helpdesk_suprapak.action_service
+#: model:ir.ui.menu,name:helpdesk_suprapak.menu_service
+msgid "Service"
+msgstr "Servicio"
+
+#. module: helpdesk_suprapak
+#: model:ir.actions.act_window,name:helpdesk_suprapak.action_technic
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_helpdesk_ticket__technic_id
+#: model:ir.model.fields.selection,name:helpdesk_suprapak.selection__helpdesk_ticket__pqrs__technic
+#: model:ir.ui.menu,name:helpdesk_suprapak.menu_technic
+msgid "Technic"
+msgstr "Tecnico"
+
+#. module: helpdesk_suprapak
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_cut__code
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_paste__code
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_print__code
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_service__code
+#: model:ir.model.fields,field_description:helpdesk_suprapak.field_technic__code
+msgid "code"
+msgstr "Codigo"

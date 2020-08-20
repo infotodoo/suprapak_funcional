@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="helpdesk_form" model="ir.ui.view">
+            <field name="name">helpdesk.form</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ticket_type_id']" position="attributes">
+                    <attribute name='domain'>[('team_id','=',team_id)]</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="helpdesk_ticket_type_inherit" model="ir.ui.view">
+            <field name="name">helpdesk_ticket_type_inherit</field>
+            <field name="model">helpdesk.ticket.type</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_type_view_tree"/>
+            <field name="priority">19</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="team_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_service">
+            <field name="name">Service</field>
+            <field name="res_model">service</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_print">
+            <field name="name">Print</field>
+            <field name="res_model">print</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_paste">
+            <field name="name">Paste</field>
+            <field name="res_model">paste</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_technic">
+            <field name="name">Technic</field>
+            <field name="res_model">technic</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_cut">
+            <field name="name">Cut</field>
+            <field name="res_model">cut</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_rewind">
+            <field name="name">Rewind</field>
+            <field name="res_model">rewind</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_service"
+                  name="Service"
+                  action="action_service"
+                  parent="helpdesk.helpdesk_menu_config"
+                  sequence="11"/>
+        <menuitem id="menu_print"
+                  name="Print"
+                  action="action_print"
+                  parent="helpdesk.helpdesk_menu_config"
+                  sequence="12"/>
+        <menuitem id="menu_paste"
+                  name="Paste"
+                  action="action_paste"
+                  parent="helpdesk.helpdesk_menu_config"
+                  sequence="13"/>
+        <menuitem id="menu_technic"
+                  name="Technic"
+                  action="action_technic"
+                  parent="helpdesk.helpdesk_menu_config"
+                  sequence="14"/>
+        <menuitem id="menu_cut"
+                  name="Cut"
+                  action="action_cut"
+                  parent="helpdesk.helpdesk_menu_config"
+                  sequence="15"/>
+        <menuitem id="menu_rewind"
+                  name="Rewind"
+                  action="action_rewind"
+                  parent="helpdesk.helpdesk_menu_config"
+                  sequence="16"/>
+    </data>
+</odoo>

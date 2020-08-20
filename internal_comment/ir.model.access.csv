@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_note,access.sale.note,model_sale_note,sales_team.group_sale_salesman,1,1,1,0
+access_sale_note_inv,access.sale.note,model_sale_note,stock.group_stock_user,1,1,1,0
+
+

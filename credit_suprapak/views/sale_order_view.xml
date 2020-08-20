@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="sale_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='other_information']" position="inside">
+                    <group groups="dev_customer_credit_limit.credit_limit_config">
+                        <group name="credit_limit" string="Credit limit">
+                            <field name="users_ids" widget="many2many_tags"/>
+                            <!--<field name="patrners_ids" widget="many2many_tags"/>-->
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,56 @@
+<odoo>
+    <data noupdate="1">
+        <record id="mail_template_credit_suprapak" model="mail.template">
+            <field name="name">Sales Order: Credit limit</field>
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' }) Credit Limit</field>
+            <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+            <field name="partner_to">${object.compute_patrners_ids()}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        % set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order'
+        Hello,
+                        <br />
+                        <br />
+                        Your
+        % if ctx.get('proforma'):
+            Pro forma invoice for ${doc_name}
+                        <strong>${object.name}</strong>
+                        % if object.origin:
+                (with reference: ${object.origin} )
+            % endif
+            amounting in
+                        <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>
+                        is available.
+        % else:
+            ${doc_name}
+                        <strong>${object.name}</strong>
+                        % if object.origin:
+                (with reference: ${object.origin} )
+            % endif
+            amounting in
+                        <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>
+                        is ready for review.
+        % endif
+                        <br />
+                        <br />
+                        The customer has a credit limit of
+                        <strong>${object.partner_id.credit_limit}</strong>
+                        , the order has a value of
+                        <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>
+                        ; the exceeded is
+                        <strong>${object.exceeded_amount}</strong>
+                        <br />
+                        <br />
+                        Please check
+                        <br />
+                    </p>
+                </div>
+            </field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="user_signature" eval="False" />
+            <field name="auto_delete" eval="True" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-27 21:58+0000\n"
+"PO-Revision-Date: 2020-07-27 21:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_suprapak
+#: model_terms:ir.ui.view,arch_db:purchase_suprapak.view_wizard_purchase_form
+msgid "<span> Budget Limit Exceeded</span>"
+msgstr "Limite de Presupuesto Execedido"
+
+#. module: purchase_suprapak
+#: model:ir.model.fields.selection,name:purchase_suprapak.selection__purchase_order__state__budget
+msgid "Blocked to Approve"
+msgstr "BLoqueado por Aprobación"
+
+#. module: purchase_suprapak
+#: model:ir.model,name:purchase_suprapak.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr "Línea de presupuesto"
+
+#. module: purchase_suprapak
+#: model:ir.actions.act_window,name:purchase_suprapak.action_wizard_purchase
+msgid "Budget Wizard"
+msgstr "Ventana de Presupuesto"
+
+#. module: purchase_suprapak
+#: model_terms:ir.ui.view,arch_db:purchase_suprapak.view_wizard_purchase_form
+msgid "Budget Wizard limit"
+msgstr "Ventana limite de Presupuesto"
+
+#. module: purchase_suprapak
+#: model_terms:ir.ui.view,arch_db:purchase_suprapak.view_inherit_purchase_order_form
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: purchase_suprapak
+#: model_terms:ir.ui.view,arch_db:purchase_suprapak.view_inherit_purchase_order_form
+msgid "Create Bill"
+msgstr "Crear Factura"
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__id
+msgid "ID"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__message
+msgid "Message"
+msgstr ""
+
+#. module: purchase_suprapak
+#: model_terms:ir.ui.view,arch_db:purchase_suprapak.view_wizard_purchase_form
+msgid "Notify"
+msgstr "Notificar"
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_purchase_order_line__product_account
+msgid "Product Account"
+msgstr "Cuenta del Producto"
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_crossovered_budget_lines__purchase_mount
+msgid "Purchase Mount"
+msgstr "Monto Comprado"
+
+#. module: purchase_suprapak
+#: model:ir.model,name:purchase_suprapak.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: purchase_suprapak
+#: model:ir.model,name:purchase_suprapak.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea de Orden de Compra"
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_purchase_order__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: purchase_suprapak
+#: model:ir.model,name:purchase_suprapak.model_wizard_purchase
+msgid "This is the wizard for Purchase"
+msgstr "Este es la ventana para Compras"
+
+#. module: purchase_suprapak
+#: model:ir.model.fields,field_description:purchase_suprapak.field_wizard_purchase__users_ids
+msgid "Users"
+msgstr ""

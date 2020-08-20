@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="type_of_failure_view_tree" model="ir.ui.view">
+        <field name="name">type.of.failure.tree</field>
+        <field name="model">type.of.failure</field>
+        <field name="arch" type="xml">
+            <tree string="Assign To User">
+                <field name="name"/>
+                <field name="maintenance_equipment_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- equipment.category : actions -->
+    <record id="type_of_failure_action" model="ir.actions.act_window">
+        <field name="name">Type of failure</field>
+        <field name="res_model">type.of.failure</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="type_of_failure_view_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new equipment category
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem
+        id="menu_maintenance_type_failure"
+        name="Type of failure"
+        parent="maintenance.menu_maintenance_configuration"
+        action="type_of_failure_action"
+        sequence="5"/>
+
+
+
+    <record id="hr_equipment_request_view_form_inherited" model="ir.ui.view">
+            <field name="name">hr.equipment.request.view.form.inherited</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+            <field name="arch" type="xml">
+                <field name="equipment_id" position="after">
+                    <field name="failure_id" domain="['|',('maintenance_equipment_id','=',equipment_id),('maintenance_equipment_id','=',False)]"/>
+                </field>    
+            </field>
+        </record>
+
+        <record id="responsable_technic_view_tree" model="ir.ui.view">
+        <field name="name">responsable.technic.tree</field>
+        <field name="model">responsable.technic</field>
+        <field name="arch" type="xml">
+            <tree string="Responsable Technic">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="document"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- equipment.category : actions -->
+    <record id="responsable_technic_action" model="ir.actions.act_window">
+        <field name="name">Responsable Technic</field>
+        <field name="res_model">responsable.technic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="responsable_technic_view_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new Technic
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem
+        id="menu_responsable_technic"
+        name="Responsable Technic"
+        parent="maintenance.menu_maintenance_configuration"
+        action="responsable_technic_action"
+        sequence="6"/>
+
+
+
+    <record id="hr_equipment_request_view_form_inherited_two" model="ir.ui.view">
+            <field name="name">hr.equipment.request.view.form.inherited.two</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="responsable_technic_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                </field>    
+            </field>
+        </record>
+
+</odoo>

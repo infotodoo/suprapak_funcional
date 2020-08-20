@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+          <!-- MRP.WORKORDER TABLET VIEW INHERIT-->
+        <record id="mrp_workorder_tablet_view_inheirt" model="ir.ui.view">
+            <field name="name">mrp.workorder.view.form.inherit</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/div[@class='workorder_bar']/div[1]/field[@name='product_uom_id']" position="after">
+                    <button name="split_mo"
+                        string="Split"
+                        class="btn-success"
+                        type="object"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_workorder_tablet_view_inheirt_form_view" model="ir.ui.view">
+            <field name="name">mrp.workorder.view.form.inherit.view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="component_product_id" widget="many2many_tags"/>
+                    <field name="bom_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="mrp_workorder_tablet_view_form_ex_inheirt" model="ir.ui.view">
+            <field name="name">mrp.workorder.view.form.ex.inherit</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <field name="state" position="attributes">
+                    <attribute name="statusbar_visible">pending,ready,progress,partial_done,done</attribute>
+                </field>
+                <button name="open_tablet_view" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'not in', ('ready', 'progress','partial_done'))]}</attribute>
+                </button>
+            </field>
+        </record>
+
+        <record id="mrp_production_tablet_view_form_ex_inheirt" model="ir.ui.view">
+            <field name="name">mrp.production.view.form.ex.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <field name="state" position="attributes">
+                    <attribute name="statusbar_visible">confirmed,progress,partial_done,done</attribute>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

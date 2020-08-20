@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 17:41+0000\n"
+"PO-Revision-Date: 2020-05-08 17:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid ") Boxes with a gross weight of"
+msgstr ") Cajas con un peso bruto de "
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "<strong>Box</strong>"
+msgstr "<strong>Caja</strong>"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "<strong>Part Number</strong>"
+msgstr "<strong>Numero de Parte</strong>"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "<strong>Purchase Order</strong>"
+msgstr "<strong>Pedido</strong>"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "<strong>Vendor Number</strong>"
+msgstr "<strong>Numero del Vendedor</strong>"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "Boxes:"
+msgstr "Cajas:"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__class_print
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__class_print
+msgid "Class of Print"
+msgstr "Clase de impresion"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__x_currency_id
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__x_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__customer_reference
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__customer_reference
+msgid "Customer Reference"
+msgstr "Referencia del cliente"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__date_version
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__date_version
+msgid "Date Version"
+msgstr "Fecha de la version"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__weight_gross
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__weight_gross
+msgid "Gross Weight"
+msgstr "Peso Bruto"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "Gross Weight:"
+msgstr "Peso Bruto:"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "Kg"
+msgstr "Kg"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "Kg of heat shirinkable sleeves distributed as follow:"
+msgstr "Kg de mangas termocontraíbles distribuidas de la siguiente manera:"
+
+#. module: stock_suprapak
+#: model:ir.model.fields.selection,name:stock_suprapak.selection__product_product__tipo_producto__materia
+#: model:ir.model.fields.selection,name:stock_suprapak.selection__product_template__tipo_producto__materia
+msgid "Materia Prima"
+msgstr "Materia Prima"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__weight
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__weight
+msgid "Net Weight"
+msgstr "Peso Neto"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "Net Weight:"
+msgstr "Peso Neto:"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__presentation
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__presentation
+msgid "Presentation"
+msgstr "Presentación"
+
+#. module: stock_suprapak
+#: model:ir.model,name:stock_suprapak.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: stock_suprapak
+#: model:ir.model.fields.selection,name:stock_suprapak.selection__product_product__tipo_producto__terminado
+#: model:ir.model.fields.selection,name:stock_suprapak.selection__product_template__tipo_producto__terminado
+msgid "Producto terminado"
+msgstr "Producto terminado"
+
+#. module: stock_suprapak
+#: model_terms:ir.ui.view,arch_db:stock_suprapak.report_delivery_document_suprapak
+msgid "Ship date:"
+msgstr "Fecha de envio:"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__tipo_producto
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__tipo_producto
+msgid "Tipo de Producto"
+msgstr "Tipo de Producto"
+
+#. module: stock_suprapak
+#: model:ir.model,name:stock_suprapak.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: stock_suprapak
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_product__type_selle
+#: model:ir.model.fields,field_description:stock_suprapak.field_product_template__type_selle
+msgid "Type of Sealed"
+msgstr "Tipo de sellado"

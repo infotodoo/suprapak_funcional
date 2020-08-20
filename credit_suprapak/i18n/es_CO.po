@@ -1,0 +1,142 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* credit_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-08 20:59+0000\n"
+"PO-Revision-Date: 2020-04-08 20:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: credit_suprapak
+#: model:mail.template,subject:credit_suprapak.mail_template_credit_suprapak
+msgid ""
+"${object.company_id.name} ${object.state in ('draft', 'sent') and "
+"'Quotation' or 'Order'} (Ref ${object.name or 'n/a' }) Credit Limit"
+msgstr ""
+"${object.company_id.name} ${object.state in ('draft', 'sent') and "
+"'Cotizacion' or 'Pedido'} (Ref ${object.name or 'n/a' }) Limite de Credito"
+
+#. module: credit_suprapak
+#: model:mail.template,body_html:credit_suprapak.mail_template_credit_suprapak
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"                    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"                        % set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order'\n"
+"        Hello,\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Your\n"
+"        % if ctx.get('proforma'):\n"
+"            Pro forma invoice for ${doc_name}\n"
+"                        <strong style=\"font-weight:bolder;\">${object.name}</strong>\n"
+"                        % if object.origin:\n"
+"                (with reference: ${object.origin} )\n"
+"            % endif\n"
+"            amounting in\n"
+"                        <strong style=\"font-weight:bolder;\">${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"                        is available.\n"
+"        % else:\n"
+"            ${doc_name}\n"
+"                        <strong style=\"font-weight:bolder;\">${object.name}</strong>\n"
+"                        % if object.origin:\n"
+"                (with reference: ${object.origin} )\n"
+"            % endif\n"
+"            amounting in\n"
+"                        <strong style=\"font-weight:bolder;\">${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"                        is ready for review.\n"
+"        % endif\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        The customer has a credit limit of\n"
+"                        <strong style=\"font-weight:bolder;\">${object.partner_id.credit_limit}</strong>\n"
+"                        , the order has a value of\n"
+"                        <strong style=\"font-weight:bolder;\">${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"                        ; the exceeded is\n"
+"                        <strong style=\"font-weight:bolder;\">${object.exceeded_amount}</strong>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Please revise check\n"
+"                        <br>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"                    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"                        % set doc_name = 'cotizacion' if object.state in ('draft', 'sent') else 'pedido'\n"
+"        Hola,\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Your\n"
+"        % if ctx.get('proforma'):\n"
+"            El ${doc_name}\n"
+"                        <strong style=\"font-weight:bolder;\">${object.name}</strong>\n"
+"                        % if object.origin:\n"
+"                (con referencia: ${object.origin} )\n"
+"            % endif\n"
+"            por un importe de\n"
+"                        <strong style=\"font-weight:bolder;\">${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"                        está disponible.\n"
+"        % else:\n"
+"            El ${doc_name}\n"
+"                        <strong style=\"font-weight:bolder;\">${object.name}</strong>\n"
+"                        % if object.origin:\n"
+"                (con referencia: ${object.origin} )\n"
+"            % endif\n"
+"            por un importe de\n"
+"                        <strong style=\"font-weight:bolder;\">${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"                        está lista para su revisión.\n"
+"        % endif\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        El cliente tiene un limite de credito de\n"
+"                        <strong style=\"font-weight:bolder;\">${object.partner_id.credit_limit}</strong>\n"
+"                        , el ${doc_name} tiene un valor de\n"
+"                        <strong style=\"font-weight:bolder;\">${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"                        ; el excedente es\n"
+"                        <strong style=\"font-weight:bolder;\">${object.exceeded_amount}</strong>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Por favor revisar.\n"
+"                        <br>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: credit_suprapak
+#: model_terms:ir.ui.view,arch_db:credit_suprapak.sale_order_form
+msgid "Credit limit"
+msgstr "Limite de credito"
+
+#. module: credit_suprapak
+#: model:ir.model,name:credit_suprapak.model_customer_limit_wizard
+msgid "Customer Credit Limit Wizard"
+msgstr "Limite de credito cliente Wizard"
+
+#. module: credit_suprapak
+#: model:ir.model.fields,field_description:credit_suprapak.field_sale_order__patrners_ids
+msgid "Partners"
+msgstr "Terceros"
+
+#. module: credit_suprapak
+#: model:ir.model.fields,field_description:credit_suprapak.field_sale_order__users_ids
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: credit_suprapak
+#: model:ir.model,name:credit_suprapak.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de Venta"
+
+#. module: credit_suprapak
+#: model_terms:ir.ui.view,arch_db:credit_suprapak.customer_limit_wizard_form
+msgid "Send mail"
+msgstr "Enviar notificacion"

@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+      <record id="res_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="sectors_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}" />
+                    <field name="sector_id" options="{'no_create': True, 'no_create_edit':True}" />
+                    <field name="bool_postobon" />
+                    <field name="bool_avon" />
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="tolerance" string="Customer Tolerance">
+                        <group>
+                            <group name="minimals" string="MINIMALS">
+                                <field name="lead_time"/>
+                                <field name="tolerance_minimal"/>
+                                <field name="tolerance_minimal_day"/>
+                            </group>
+                            <group name="maximuns" string="MAXIMUNS">
+                                <field name="day_billing"/>
+                                <field name="tolerance_maximun"/>
+                                <field name="tolerance_maximun_day"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_res_sector">
+            <field name="name">Sector</field>
+            <field name="res_model">res.sector</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_res_sector"
+                  name="Sector"
+                  action="action_res_sector"
+                  parent="contacts.res_partner_menu_config"
+                  sequence="1"/>
+  </data>
+</odoo>

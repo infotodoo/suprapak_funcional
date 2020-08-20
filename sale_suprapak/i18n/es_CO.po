@@ -1,0 +1,191 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-11 16:04+0000\n"
+"PO-Revision-Date: 2020-08-11 16:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__attachment_id
+msgid "Attachment"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_res_country__average_days
+msgid "Average Transit Days"
+msgstr "Promedio días en Transito"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Cancel"
+msgstr ""
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Close"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model,name:sale_suprapak.model_res_country
+msgid "Country"
+msgstr "País"
+
+#. module: sale_suprapak
+#: model:ir.model,name:sale_suprapak.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_sale_order__date_planned_finished
+msgid "Date Finish Production"
+msgstr "Fecha Final Producción"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__end_datetime
+msgid "End Datetime"
+msgstr "Fecha Final"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__data
+msgid "File"
+msgstr "Archivo"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__data_attachment
+msgid "File Content"
+msgstr "Contenido del archivo"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__name
+msgid "File Name"
+msgstr "Nombre del archivo"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Filters"
+msgstr "Filtros"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Here is the datas:"
+msgstr "Aquí esta el archivo"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Here is the report:"
+msgstr "Este es el reporte:"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.sale_order_inherit_form
+msgid "Manufacturing"
+msgstr "Fabricación"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_res_country_state__number_code
+msgid "Number Code"
+msgstr "Codigo del Pais"
+
+#. module: sale_suprapak
+#: model:ir.ui.menu,name:sale_suprapak.otif_report_wizard
+msgid "Otif Report"
+msgstr "Reporte Otif"
+
+#. module: sale_suprapak
+#: model:ir.model,name:sale_suprapak.model_otif_report_wizard
+msgid "Otif report wizard"
+msgstr "Ventana emergente del Reporte Otif"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Report"
+msgstr "Reporte"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Report Complete"
+msgstr "Reporte Completo"
+
+#. module: sale_suprapak
+#: model:ir.model,name:sale_suprapak.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de Venta"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__start_datetime
+msgid "Start Datetime"
+msgstr "Fecha inicio"
+
+#. module: sale_suprapak
+#: model:ir.model.fields,field_description:sale_suprapak.field_otif_report_wizard__state
+msgid "State"
+msgstr "Estado"
+
+#. module: sale_suprapak
+#: model:ir.model.constraint,message:sale_suprapak.constraint_res_country_state_name_number_code_uniq
+msgid "The code of the country must be unique by country !"
+msgstr "Este codigo de ciudad debe ser único"
+
+#. module: sale_suprapak
+#: model_terms:ir.ui.view,arch_db:sale_suprapak.view_otif_report_tree
+msgid "Validation date from Otif"
+msgstr "Validación fechas para Otif"
+
+#. module: sale_suprapak
+#: model:ir.actions.act_window,name:sale_suprapak.create_otif_report_wizard
+msgid "Wizard Otif"
+msgstr "Ventana Otif"
+
+#. module: sale_suprapak
+#: model:ir.model.fields.selection,name:sale_suprapak.selection__otif_report_wizard__state__choose
+msgid "choose"
+msgstr "Escoger"
+
+#. module: sale_suprapak
+#: model:ir.model.fields.selection,name:sale_suprapak.selection__otif_report_wizard__state__get
+msgid "get"
+msgstr "Obtener"

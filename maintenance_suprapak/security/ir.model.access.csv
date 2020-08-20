@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_type_of_failure_user,type.of.failure.user,model_type_of_failure,base.group_user,1,1,1,1
+access_responsable_technic_user,responsable.technic.user,model_responsable_technic,base.group_user,1,1,1,1

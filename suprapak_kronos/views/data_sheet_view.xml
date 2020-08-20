@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="form_data_sheet" model="ir.ui.view">
+            <field name="name">form.data.sheet</field>
+            <field name="model">data.sheet</field>
+            <field name="arch" type="xml">
+                <form string="Data sheet">
+                    <header>
+                        <button string="New Quotation" name="action_sale_quotations_new" type="object" class="oe_highlight"/>
+                        <button class="oe_highlight" type="object" name="action_bom_line" string="Create Versions" attrs="{'invisible':[('type_sheet', '=', 'obsolete')]}"/>
+                        <field name="state" widget="statusbar" clickable="True"/>
+                    </header>
+                    <header>
+                        <button string="Review" type="object" name="progressbar_review" />
+                            <button string="Technical Approval" type="object" name="progressbar_technical" />
+                            <button string="Design approval" type="object" name="progressbar_design" />
+                            <button string="Approved" type="object" name="progressbar_approved" />
+                            <button string="Rejected" type="object" name="progressbar_rejected" />
+                            <button string="Obsolete" type="object" name="progressbar_obsolete" />
+                            <button string="Rejected Technical" type="object" name="progressbar_rejected_t" />
+                            <button string="Rejected Design" type="object" name="progressbar_rejected_d" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="action_view_sale_quotation" icon="fa-pencil-square-o">
+                                <field name="quotation_count" widget="statinfo" string="Quotations"/>
+                            </button>
+                        </div>
+                            <div class="oe_title">
+                                <label for="name" class="oe_edit_only" string="Name"/>
+                                <h1>
+                                    <field name="name" required="True"/>
+                                </h1>
+                            </div>
+                            <div class="oe_title">
+                                <label for="name" class="oe_edit_only" string="Versión"/>
+                                <h1>
+                                    <field name="version" readonly="True"/>
+                                </h1>
+                                <label for="version_datetime" class="oe_edit_only" string="Datetime version"/>
+                                    <br></br>
+                                        <field name="version_datetime" readonly="True"/>
+                            <!-- Montaje multiple -->
+                            </div>
+                        <separator string="General" colspan="2"/>
+                        <group>
+                            <group>
+                                <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" required="True" domain="[('tipo_producto','=','terminado')]"/>
+                                <field name="user_id" invisible="1"/>
+                                <field name="produce"/>
+                                <field name="opportunity_id" options="{'no_create': True, 'no_create_edit':True}" readonly="True"/>
+                            </group>
+                            <group>
+                                <field name="priority" widget="priority"/>
+                                <field name="type_sheet" readonly="True"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Basic information">
+                                <group>
+                                    <group>
+                                        <field name="partner_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="parent_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="commentary"/>
+                                        <field name="sector_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="zip"/>
+                                        <field name="product_code"/>
+                                        <field name="team_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="currency_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <group string="customer packaging">
+                                        <field name="tag_form_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="tag_color_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="description_tag"/>
+                                        <field name="ubicaition_label"/>
+                                        <field name="material_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="application_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="position_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="content_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="photo" widget="pdf_viewer"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Technical information">
+                                <group>
+                                    <group>
+                                        <field name="print" widget="checkbox"/>
+                                        <field name="no_print" widget="checkbox"/>
+                                        <field name="print_class" widget="radio" attrs="{'invisible':[('print', '!=', True)]}"/>
+                                        <field name="print_type_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('print', '!=', True)]}"/>
+                                        <field name="required_match_print" widget="checkbox"/>
+                                        <field name="product_type_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="chemical_composition" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <!--<group>-->
+                                        <group>
+                                            <field name="quantity"/>
+                                            <field name="uom_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="form_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="movie_type_real_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="movie_type_id" options="{'no_create': True, 'no_create_edit':True}"
+                                             domain="[('movie_type','=',movie_type_real_id)]"/>
+                                            <field name="transversal" />
+                                            <field name="longitudinal" />
+                                            <field name="movie_type_product_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"
+                                                           domain="[('tipo_producto','=','materia'),'|',('categ_id','=','PELICULA IMPORTADA'),('categ_id','=','PELICULA NACIONAL')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                    <!--</group>-->
+                                    <group>
+                                        <field name="specification_width_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="specification_long_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="caliber_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="overlap_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="overlap_location_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="rhombus" attrs="{'invisible':[('overlap_id', '!=', True)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="tolerance_width" readonly="True"/>
+                                        <field name="tolerance_long" readonly="True"/>
+                                        <field name="tolerance_caliber" readonly="True"/>
+                                        <field name="tolerance_overlap" readonly="True"/>
+                                        <field name="rhombus"/>
+                                        <h1><br></br></h1>
+                                        <field name="average_label_weight" attrs="{'invisible':[('presentation','=','ROLLO')]}"/>
+                                        <field name="roll_weight" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                    </group>
+                                    <group>
+                                        <!--rollo-->
+                                        <field name="presentation_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="presentation" invisible="True"/>
+                                        <field name="meter_per_roll" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                        <field name="core_diameter_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                        <field name="embossing_number_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                        <field name="number_splices_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                        <fields name="splice_type_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                        <field name="splicing_tape_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                    </group>
+                                    <group>
+                                        <!--sellado-->
+                                        <field name="seal_type_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation', '!=','SELLADO')]}"/>
+                                        <field name="sealing_tab" attrs="{'invisible':[('presentation', '!=','SELLADO')]}"/>
+                                        <field name="seal" invisible="1"/>
+                                    </group>
+                                    <group>
+                                        <!--preformado-->
+                                        <field name="mold_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                        <field name="bottom_diameter" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                        <field name="upper_diameter" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                        <field name="tab_length" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                        <field name="band_height" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                        <field name="product" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                        <field name="long_modification" attrs="{'invisible':[('presentation', '!=','PREFORMADO')]}"/>
+                                    </group>
+                                    <group>
+                                        <!--plano mecanico-->
+                                        <field name="mechanic_plan_ids">
+                                            <tree>
+                                                <field name="name" widget="pdf_viewer"/>
+                                            </tree>
+                                        </field>
+                                        <!-- Montaje multiple -->
+                                        <label for="multiple_mount" string="This data have multiple Mount?"/>
+                                        <div class="o_row">
+                                            <field name="multiple_mount" widget="checkbox"/>
+                                            <strong><h7>Separation</h7></strong><span>    </span>
+                                            <field name="separation" widget="checkbox"/>
+                                        </div>
+                                        <field name="sheet_ids" context="{'default_repeat_id': repeat_id, 'default_id_char': id}" attrs="{'invisible':[('multiple_mount', '!=', True)]}">
+                                            <tree editable="bottom">
+                                                <field name="repeat_id" invisible="True"/>
+                                                <field name="id_char" invisible="True"/>
+                                                <field name="id_sheet" domain="[('repeat_id','=',repeat_id),('id','!=',id_char)]"/>
+                                                <field name="repetition" required="True" />
+                                                <field name="description"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group>
+                                        <field name="barcode_type_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="barcode_number"/>
+                                    </group>
+                                    <group>
+                                        <field name="microperforated" widget="checkbox"/>
+                                        <field name="microperforated_ids" attrs="{'invisible':[('microperforated', '!=', True)]}">
+                                            <tree>
+                                                <field name="cross"/>
+                                                <field name="logitudinal"/>
+                                            </tree>
+                                        </field>
+                                        <field name="guillotine" widget="checkbox"/>
+                                        <field name="guillotine_mm" attrs="{'invisible':[('guillotine', '!=', True)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="drawn" widget="checkbox"/>
+                                        <field name="drawn_type_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                        <field name="drawn_presentation_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                        <field name="drawn_pass_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                        <field name="long_drawn_pass" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                        <field name="cross_drawn_pass" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                        <field name="long_partial" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                        <field name="tongue" attrs="{'invisible':[('drawn', '!=', True)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="waistband" widget="checkbox"/>
+                                        <field name="color_movie_id_1" options="{'no_create': True, 'no_create_edit':True}"
+                                         attrs="{'invisible':[('waistband', '!=', True)]}" domain="[('tipo_producto','=','materia'),('categ_id','=','SUMINIS.PRODUCCION')]"/>
+                                         <field name="sellalit_glue" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="thermal_adhesive" widget="checkbox"/>
+                                        <field name="adhesive_type_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('thermal_adhesive', '!=', True )]}"/>
+                                        <field name="adhesive_type_selector" invisible="1"/>
+                                        <field name="print_adhesive_id" attrs="{'invisible':[('adhesive_type_selector', '!=','IMPRESO')]}" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="rod_number" attrs="{'invisible':[('adhesive_type_selector', '!=','EN BARRA')]}"/>
+                                        <field name="rod_adhesive_id" attrs="{'invisible':[('adhesive_type_selector', '!=','EN BARRA')]}" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="photo_format" widget="pdf_viewer" attrs="{'invisible':[('adhesive_type_selector', '!=','IMPRESO')]}"/>
+                                    </group>
+                                    <group string="Acabados Especiales">
+                                        <field name="cold_foil" widget="checkbox"/>
+                                        <field name="cold_foil_id_1" options="{'no_create': True, 'no_create_edit':True}" 
+                                        attrs="{'invisible':[('cold_foil', '!=',True)]}" domain="[('tipo_producto','=','materia'),('categ_id','=','SUMINIS.PRODUCCION')]"/>
+                                        <field name="cold_foil_selector" invisible="1"/>
+                                        <field name="cold_foil_width" attrs="{'invisible':[('cold_foil', '!=',True)]}"/>
+                                        <field name="cast" widget="checkbox"/>
+                                        <field name="cast_reference" attrs="{'invisible':[('cast', '!=',True)]}"/>
+                                        <field name="cast_width" attrs="{'invisible':[('cast', '!=',True)]}"/>
+                                        <field name="cast_product_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('cast', '!=',True)]}"/>
+                                        <field name="nazdar_adhesive_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    </group>
+                                    <group string="Tintas Especiales">
+                                        <field name="ink_ids">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="percentage"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Design Features">
+                                <group>
+                                    <group>
+                                        <field name="required_match_print" widget="checkbox"/>
+                                        <field name="match_print_ids" attrs="{'invisible':[('required_match_print', '!=',True)]}" widget="one2many">
+                                            <tree>
+                                                <field name="datetime"/>
+                                                <field name="quantity"/>
+                                                <field name="customer"/>
+                                                <field name="match_print_id"/>
+                                                <field name="sign_vendor"/>
+                                                <field name="deliver_to"/>
+                                                <field name="sign_designer"/>
+                                                <field name="vendor_date"/>
+                                                <field name="date_recieved_approved"/>
+                                                <field name="observations"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group>
+                                        <field name="designer" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="repeat_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('large_planned','=',specification_long_id)]"/>
+                                        <field name="room_large"/>
+                                        <field name="large_planned"/>
+                                        <field name="planned_witdh"/>
+                                        <field name="specification_width_planned"/>
+                                    </group>
+                                    <group>
+                                        <field name="color_scale_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <field name="complexity"/>
+                                    </group>
+                                    <group>
+                                        <field name="print_color_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                            <tree string="Components" editable="bottom">
+                                                <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                                <field name="uom_id" invisible="True"/>
+                                                <field name="product_qty" invisible="True"/>
+                                                <field name="standard_price" invisible="True"/>
+                                                <field name="total" invisible="True"/>
+                                                <field name="press"/>
+                                                <field name="percentage"/>
+                                                <field name="line"/>
+                                                <field name="lineatura"/>
+                                                <field name="bcm"/>
+                                            </tree>
+                                        </field>
+                                        <div class="o_row o_td_label">
+                                            <label for="print_area_percentage" string="Print Area Percentage" />
+                                        </div>
+                                        <div class="o_row">
+                                            <field name="print_area_percentage"/>
+                                            <button string="Pantone" name="%(suprapak_kronos.select_pantone_action)d" type="action" class="oe_highlight"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <field name="control_changes_ids">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="date"/>
+                                                <field name="vendor"/>
+                                            </tree>
+                                        </field>
+                                        <field name="change_observation"/>
+                                    </group>
+                                    <group>
+                                        <field name="plane_art" widget="pdf_viewer"/>
+                                    </group>
+                                    <group>
+                                        <field name="funtional_test" widget="pdf_viewer"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="packaging characteristics">
+                                    <group>
+                                        <group string="packing">
+                                            <field name="separator_id" attrs="{'invisible':[('presentation','!=','ROLLO')]}" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','SEPARADORES')]"/>
+                                            <field name="core_diameter" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                            <field name="width_core" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                            <field name="bag" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','BOLSAS')]"/>
+                                            <field name="box" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CAJAS')]"/>
+                                            <!--<field name="superlon" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','AISLANTES TERMICOS')]"/>-->
+                                        </group>
+                                        <group>
+                                                <h1><br></br></h1>
+                                                <field name="unit_per_bag"/>
+                                                <field name="unit_per_box"/>
+                                                <field name="bag_to_box" attrs="{'invisible':[('presentation','!=','ROLLO')]}"/>
+                                        </group>
+                                        <!--<group string="lashing straps">
+                                            <field name="roll_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="for_bag_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','BOLSAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="for_superlon_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','AISLANTES TERMICOS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="for_box"/>
+                                        </group>
+                                        <group string="Cintas de empalme por proceso ">
+                                            <field name="refile_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="print_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="revision_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="gluped_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="gluped2_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                            <field name="rebobine_ids" widget="one2many" context="{'default_sheet_id': id}">
+                                                <tree string="Components" editable="bottom">
+                                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}" domain="[('tipo_producto','=','materia'),('categ_id','=','CINTAS')]"/>
+                                                    <field name="uom_id" invisible="True"/>
+                                                    <field name="product_qty" invisible="True"/>
+                                                    <field name="standard_price" invisible="True"/>
+                                                    <field name="total" invisible="True"/>
+                                                </tree>
+                                            </field>
+                                        </group>-->
+                                    </group>
+                            </page>
+                            <page string="Bills of materials">
+                                <group>
+                                    <field name="line_ids">
+                                        <tree editable="bottom">
+                                            <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="product_qty" sum="Product qty"/>
+                                            <field name="uom_categ_id" invisible="True"/>
+                                            <field name="uom_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="standard_price"/>
+                                            <field name="total" sum="Total"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                    <field name="routing_id"/>
+                                </group>
+                            </page>
+                            <page string="Versions">
+                                <group>
+                                    <field name="bom_id" options="{'no_create': True, 'no_create_edit':True}" readonly="True"/>
+                                </group>
+                                <group>
+                                    <field name="bom_ids">
+                                        <tree>
+                                            <field name="product_tmpl_id"/>
+                                            <field name="product_qty"/>
+                                            <field name="product_uom_id"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Production orders">
+                                <group>
+                                    <field name="production_ids" readonly="True"/>
+                                </group>
+                                <group>
+                                </group>
+                            </page>
+                            <page string="Scrap and Production">
+                                <group>
+                                    <field name="production_waste_ids">
+                                        <tree editable="bottom">
+                                            <field name="name" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="work_center_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="average_waste"/>
+                                            <field name="quantity_entered"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Process">
+                                <group>
+                                    <field name="waste_ids">
+                                        <tree editable="bottom">
+                                            <field name="operations" />
+                                            <field name="work_center"/>
+                                            <field name="routing"/>
+                                            <field name="average" attrs="{'invisible':[('routing','=',False)]}"/>
+                                            <field name="quantity_entered" attrs="{'invisible':[('routing','=',False)]}"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                   <field name="waste_total"/>
+                                   <field name="length_order"/>
+                                   <field name="length_waste"/>
+                                </group>
+                            </page>
+                            <page string="Control">
+                                <group>
+                                    <group string="Control Point 1">
+                                        <field name="blade_width"/>
+                                        <field name="area_per_unit"/>
+                                        <field name="total_area_cold_foil"/>
+                                        <div class="o_row o_td_label">
+                                            <label for="weigth_roll" string="Weigth Roll (Kg)" />
+                                        </div>
+                                        <div class="o_row">
+                                            <field name="weigth_roll"/>
+                                            <span></span>
+                                            <field name="unit"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <field name="uds_m"/>
+                                        <field name="uds_roll"/>
+                                        <field name="weigth_m"/>
+                                        <field name="uds_kg"/>
+                                    </group>
+                                    <group string="Control Point 2">
+                                        <field name="total_rolls"/>
+                                        <field name="required_meters"/>
+                                        <field name="meters_scrap"/>
+                                        <field name="total_weigth"/>
+                                        <field name="total_weigth_scrap"/>
+                                    </group>
+                                    <group string="Control Point 3">
+                                        <field name="waste_total"/>
+                                       <field name="printer"/>
+                                    </group>
+                                    <group string="Weigth for unit">
+                                        <field name="weigth_per_unit"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string='Constant'>
+                                <group>
+                                    <group>
+                                        <field name="constant_minimun_meter"/>
+                                        <field name="constant_adhesive"/>
+                                        <field name="constant_movie"/>
+                                    </group>
+                                    <group>
+                                        <field name="constant_glue"/>
+                                        <field name="constant_squart_meter"/>
+                                        <field name="constant_ink"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="tree_data_sheet" model="ir.ui.view">
+            <field name="name">tree.data.sheet</field>
+            <field name="model">data.sheet</field>
+            <field name="arch" type="xml">
+                <tree string="Data sheet">
+                    <field name="name"/>
+                    <field name="produce"/>
+                    <field name="partner_id"/>
+                    <field name="priority"/>
+                    <field name="type_sheet" readonly="True"/>
+                    <field name="version"/>
+                    <field name="version_datetime"/>
+                </tree>
+            </field>
+        </record>
+        <record id="form_pantone_print" model="ir.ui.view">
+            <field name="name">form.pantone.print</field>
+            <field name="model">pantone.print</field>
+            <field name="arch" type="xml">
+                <form string="Pantone">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="color_ids" widget="one2many">
+                                <tree editable="bottom">
+                                    <field name="produce_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    <field name="name_pantone"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="tree_pantone_print" model="ir.ui.view">
+            <field name="name">tree.pantone.print</field>
+            <field name="model">pantone.print</field>
+            <field name="arch" type="xml">
+                <form string="Pantone">
+                    <field name="name"/>
+                    <field name="code"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_sheet">
+            <field name="name">Data sheet</field>
+            <field name="res_model">data.sheet</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_new_data_sheet_new" model="ir.actions.act_window">
+            <field name="name">Data sheet</field>
+            <field name="res_model">data.sheet</field>
+            <field name="view_mode">form,tree</field>
+            <field name="domain">[('opportunity_id', '=', active_id)]</field>
+            <field name="context">{'search_default_opportunity_id': active_id, 'default_opportunity_id': active_id}
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_product_type">
+            <field name="name">Product type</field>
+            <field name="res_model">data.product.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_drawn_type">
+            <field name="name">Drawn type</field>
+            <field name="res_model">data.drawn.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_movie">
+            <field name="name">Movie Type</field>
+            <field name="res_model">data.movie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_movie_type">
+            <field name="name">Compound Code</field>
+            <field name="res_model">data.movie.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_movie_color">
+            <field name="name">Colors</field>
+            <field name="res_model">data.movie.color</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_caliber_type">
+            <field name="name">Caliber type</field>
+            <field name="res_model">data.caliber.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_tag_form">
+            <field name="name">Form</field>
+            <field name="res_model">data.tag.form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_material">
+            <field name="name">material</field>
+            <field name="res_model">data.material</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_application_mode">
+            <field name="name">material</field>
+            <field name="res_model">data.application.mode</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_application_position">
+            <field name="name">material</field>
+            <field name="res_model">data.application.position</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_print_type">
+            <field name="name">Print Type</field>
+            <field name="res_model">print.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_material">
+            <field name="name">Data material</field>
+            <field name="res_model">data.material</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_application_mode">
+            <field name="name">Data Application Mode</field>
+            <field name="res_model">data.application.mode</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_application_position">
+            <field name="name">Data Application Position</field>
+            <field name="res_model">data.application.position</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_data_form">
+            <field name="name">Form</field>
+            <field name="res_model">data.form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_specification_width">
+            <field name="name">Specification Width</field>
+            <field name="res_model">specification.width</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_specification_long">
+            <field name="name">Specification Long</field>
+            <field name="res_model">specification.long</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_width_overlap">
+            <field name="name">Width Overlap</field>
+            <field name="res_model">width.overlap</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_overlap_location">
+            <field name="name">Overlap Location</field>
+            <field name="res_model">overlap.location</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_presentation">
+            <field name="name">Presentation</field>
+            <field name="res_model">presentation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        core_diameter
+        <record model="ir.actions.act_window" id="action_core_diameter">
+            <field name="name">Core Diameter</field>
+            <field name="res_model">core.diameter</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_embossing_number">
+            <field name="name">Embossing Number</field>
+            <field name="res_model">embossing.number</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_number_splices">
+            <field name="name">Number Splices</field>
+            <field name="res_model">number.splices</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_splice_type">
+            <field name="name">Splice Type</field>
+            <field name="res_model">splice.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_splicing_tape">
+            <field name="name">Splicing Tape</field>
+            <field name="res_model">splicing.tape</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_seal_type">
+            <field name="name">Seal Type</field>
+            <field name="res_model">seal.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_performed">
+            <field name="name">Performed</field>
+            <field name="res_model">preformed</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_barcode_type">
+            <field name="name">Barcode Type</field>
+            <field name="res_model">barcode.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_mechanic_plan">
+            <field name="name">Mechanic Plan</field>
+            <field name="res_model">mechanic.plan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_microperforated">
+            <field name="name">Microperforated</field>
+            <field name="res_model">microperforated</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_drawn_presentation">
+            <field name="name">Drawn Presentation</field>
+            <field name="res_model">drawn.presentation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_cold_foil">
+            <field name="name">Cold Foil</field>
+            <field name="res_model">cold.foil</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_inks">
+            <field name="name">Inks</field>
+            <field name="res_model">inks</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_designer">
+            <field name="name">Designer</field>
+            <field name="res_model">designer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_color_scale">
+            <field name="name">Color Scale</field>
+            <field name="res_model">color.scale</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_control_change">
+            <field name="name">Control Change</field>
+            <field name="res_model">control.change</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_tape">
+            <field name="name">Tape</field>
+            <field name="res_model">tape</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_rewind">
+            <field name="name">Rewind</field>
+            <field name="res_model">rewind</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_for_superlon">
+            <field name="name">For Superlon</field>
+            <field name="res_model">for.superlon</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_repeat">
+            <field name="name">Repeat</field>
+            <field name="res_model">repeat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_chemical_composition">
+            <field name="name">Chemical Composition</field>
+            <field name="res_model">chemical.composition</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_adhesive_type">
+            <field name="name">Adhesive Type</field>
+            <field name="res_model">adhesive.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_drawn_pass">
+            <field name="name">Drawn Pass</field>
+            <field name="res_model">drawn.pass</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_pantone_print">
+            <field name="name">Pantones</field>
+            <field name="res_model">pantone.print</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.module.category" id="module_category_data_sheet">
+            <field name="name">Data sheet</field>
+            <field name="description">Helps you manage your data sheet.</field>
+        </record>
+        <record id="group_data_sheet_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_data_sheet"/>
+        </record>
+        <record id="group_data_sheet_admin" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="category_id" ref="module_category_data_sheet"/>
+            <field name="implied_ids" eval="[(4, ref('group_data_sheet_user'))]"/>
+        </record>
+    </data>
+</odoo>

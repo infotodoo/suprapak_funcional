@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="view_message_rejected_d" model="ir.ui.view">
+            <field name="name">data.rejected.d.form</field>
+            <field name="model">data.rejected.d</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Desing Rejected">
+                <span></span>
+                <group>
+                    <group>
+                        <field name="message" />
+                        <field name="users_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                </group>
+                <footer>
+		    	<button string="Notify" name="action_create_rejected_d" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="action_data_rejected_d" model="ir.actions.act_window">
+            <field name="name">Data Design Rejected</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">data.rejected.d</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

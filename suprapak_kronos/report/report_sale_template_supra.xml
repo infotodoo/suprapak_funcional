@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_custom_template">
+          <t t-call="web.html_container">
+             <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                   <div class="page">
+                      <head>
+                         <style>*{
+                  margin:0px;
+                  padding:0px;
+                  }
+                   div#a{
+                   margin:auto;
+                   margin-top:60px;
+                   width:1100px;
+                   height:50px;
+                   border: 0px solid black;
+                  }
+                   div#b{
+
+                   width:600px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#c{
+
+                   width:300px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                    div#d{
+
+                   width:200px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                    div#cuadro{
+
+                   width:200px;
+                   height:150px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#e{
+
+                   width:200px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#f{
+
+                   width:200px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                    div#g{
+
+                   width:150px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#h{
+
+                   width:350px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#j{
+
+                   width:250px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                    div#cu{
+
+                   width:250px;
+                   height:100px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                  div#gi{
+
+                   width:150px;
+                   height:50px;
+                   background-color:white;
+                   border: 1px solid black;
+                  }
+                    div#vi{
+                   width:100px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                  div#gra{
+
+                   width:600px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#gr{
+
+                   width:1100px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                  div#e1{
+
+                   width:150px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                  div#rec{
+
+                   width:250px;
+                   height:150px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                   div#mt{
+
+                   width:250px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                   div#e2{
+
+                   width:450px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                  div#mt1{
+
+                   width:500px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                    div#pa1{
+
+                   width:600px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                   div#en{
+
+                   width:300px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                  div#en1{
+
+                   width:800px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                    div#en2{
+
+                   width:150px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                    div#en3{
+
+                   width:100px;
+                   height:50px;
+                   background-color:white;
+                   float:right;
+                   border: 1px solid black;
+                  }
+                  div#an{
+
+                   width:800px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#my{
+
+                   width:400px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#my1{
+
+                   width:100px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                   div#my2{
+
+                   width:200px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                  div#my3{
+
+                   width:150px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                    div#my4{
+
+                   width:50px;
+                   height:50px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }
+                  div#lf{
+
+                   width:800px;
+                   height:250px;
+                   background-color:white;
+                   float:left;
+                   border: 1px solid black;
+                  }</style>
+                      </head>
+                      <h2>
+                           <br/>
+                          <span>Pedido</span>
+                            <t t-if="o.bool_client">
+                                <t t-set="production" t-value="o.order_production_id.name.split()"/>
+                                    <t t-foreach="production" t-as="produce">
+                                        <span t-esc="produce[6:]"/>
+                                    </t>
+                            </t>
+                            <t t-elif="o.production_id">
+                                <t t-set="production" t-value="o.production_id.name.split()"/>
+                                    <t t-foreach="production" t-as="produce">
+                                        <span t-esc="produce[6:]"/>
+                                    </t>
+                            </t>
+                            <t t-else=""/>
+                       </h2>
+                      <div id="a">
+                         <div id="b">
+                            <p>PEDIDO ORDEN DE PRODUCCION <br/>
+                                <span>CODIGO FTO - GC - 010</span>
+                             </p>
+                         </div>
+                         <div id="c" style="border-right-style: none;">
+                            <p align="center">No PEDIDO</p>
+                         </div>
+                         <div id="d">
+                            <p align="center">TIPO DE PEDIDO</p>
+                         </div>
+                         <div id="d" style="border-bottom-style: none;">
+                            <p align="center">FICHA No</p>
+                         </div>
+                         <div id="d" align="center">
+                            <p>NIT CLIENTE</p>
+                         </div>
+                         <div id="d" align="center" style="border-left-style: none;">
+                            <p>CODIGO CLIENTE</p>
+                         </div>
+                         <div id="c" style="border-right-style: none;">
+                            <strong>
+                                <t t-if="o.bool_client">
+                                    <t t-set="production" t-value="o.order_production_id.name.split()"/>
+                                          <t t-foreach="production" t-as="produce">
+                                             <p align="center" t-esc="produce[6:]"/>
+                                          </t>
+                                </t>
+                                 <t t-elif="o.production_id">
+                                    <t t-set="production" t-value="o.production_id.name.split()"/>
+                                          <t t-foreach="production" t-as="produce">
+                                             <span t-esc="produce[6:]"/>
+                                          </t>
+                                 </t>
+                                 <t t-else=""/>
+                            </strong>
+                         </div>
+                         <div id="d">
+                            <p align="center">
+                                <span t-field="o.type_sale"/>
+                            </p>
+                         </div>
+                         <div id="cuadro" style="border-bottom-style: none;">
+                            <strong>
+                               <p style="text-align:center; margin: 50px 0" t-field="o.sheet_id.name"/>
+                            </strong>
+                         </div>
+                         <div id="e" style="border-bottom-style: none;">
+                            <p t-field="o.sheet_id.partner_id.vat"/>
+                         </div>
+                         <div id="f" style="border-left-style: none;  border-bottom-style: none;">
+                            <p t-field="o.sheet_id.zip"/>
+                         </div>
+                         <div id="g" style="border-left-style: none;  border-bottom-style: none;">
+                            <p align="center">FECHA DEL PEDIDO</p>
+                         </div>
+                         <div id="h" style="border-bottom-style: none;">
+                            <p t-field="o.date_order"/>
+                         </div>
+                         <div id="h" style="border-bottom-style: none;">
+                            <p align="center">NOMBRE O RAZON SOCIAL DEL CLIENTE</p>
+                         </div>
+                         <div id="g" style="border-bottom-style: none;  border-right-style: none;">
+                            <p align="center">IVA SI/NO</p>
+                         </div>
+                         <div id="g" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">PEDIDO ANTERIOR No</p>
+                         </div>
+                         <div id="j" style="border-bottom-style: none;">
+                            <t t-set="production" t-value="o._compute_before_production()" />
+                             <t t-foreach="production" t-as="mrp">
+                                 <t t-if="mrp != o.production_id.name">
+                                     <t t-set="sale" t-value="o._compute_before_type_sale()" />
+                                        <span t-esc="sale"/>-<span t-esc="mrp[6:]"/>
+                                 </t>
+                                 <t t-else="">
+                                 </t>
+                             </t>
+                         </div>
+                         <div id="h" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.partner_id.name"/>
+                         </div>
+                         <div id="g" style="border-bottom-style: none;  border-right-style: none;">
+                            <p />
+                            SI
+                         </div>
+                         <div id="g" style="border-bottom-style: none;  border-right-style: none;">
+                            <p />
+                            FECHA.SOL
+                         </div>
+                         <div id="j" style="border-bottom-style: none;">
+                            <p />
+                            ???
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                            <p>PAIS</p>
+                         </div>
+                         <div id="g">
+                            <p t-field="o.sheet_id.partner_id.country_id.name"></p>
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                            <p>CODVEND</p>
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                            <t t-set="vendor" t-value="o.cod_vendor()"/>
+                              <t t-if="vendor">
+                                 <p t-esc="vendor"/>
+                              </t>
+                              <t t-else=""/>
+                         </div>
+                         <div id="cu" style="border-left-style: none;">
+                             <t t-foreach="o.order_line" t-as="line">
+                                <p style="text-align:center; margin: 40px 0; border-right-style: none" t-field="line.product_id.name"></p>
+                             </t>
+                         </div>
+                         <div id="cu">
+                             <p style="text-align:center; margin: 40px 0;">PRODUCTO A EMPACAR</p>
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                            <p>ZONA</p>
+                         </div>
+                         <div id="g">
+                            <p t-field="o.sheet_id.team_id.name"></p>
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                            <p>SECTOR</p>
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                            <p t-field="o.sheet_id.sector_id.code"></p>
+                         </div>
+                         <div id="c">
+                            <p align="center">DIRECCION DE DESPACHO</p>
+                         </div>
+                         <div id="c" style="border-right-style: none;">
+                             <t t-if="o.partner_shipping_id">
+                                <p align="center" t-field="o.partner_shipping_id.street"></p>
+                             </t>
+                             <t t-else="">
+                                 <p align="center" t-field="o.partner_id.street"></p>
+                             </t>
+                         </div>
+                         <div id="f">
+                            <p align="center"></p>
+                         </div>
+                         <div id="c">
+                            <p align="center" />
+                         </div>
+                         <div id="c" style="border-bottom-style: none;">
+                            <p align="center">DIRECCION DE FACTURA</p>
+                         </div>
+                         <div id="c" style="border-right-style: none; border-bottom-style: none;">
+                             <t t-if="o.partner_invoice_id">
+                                <p align="center" t-field="o.partner_invoice_id.street"></p>
+                             </t>
+                             <t t-else="">
+                                 <p align="center" t-field="o.partner_id.street"></p>
+                             </t>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center">MUESTRA #</p>
+                         </div>
+                         <div id="c" style="border-bottom-style: none;">
+                            <p align="center" />
+                         </div>
+                         <div id="c" style="border-bottom-style: none;  border-right-style: none;">
+                            <p align="center">TELEFONO</p>
+                         </div>
+                         <div id="c" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.partner_id.phone"/>
+                         </div>
+                         <div id="f" style="border-bottom-style: none; border-left-style: none;">
+                            <p align="center">ENTREGAS PARCIALES</p>
+                         </div>
+                         <div id="c" style="border-bottom-style: none;">
+                            <p align="center">????</p>
+                         </div>
+                         <div id="c">
+                            <p align="center">ORDEN DE COMPRA</p>
+                         </div>
+                         <div id="c" style="border-right-style: none;">
+                            <p align="center" t-field="o.name"></p>
+                         </div>
+                         <div id="f">
+                            <p align="center">VENDEDOR</p>
+                         </div>
+                         <div id="c">
+                            <p align="center" t-field="o.user_id.name"></p>
+                         </div>
+                         <div id="c">
+                            <p align="center">CONDICIONES DE PAGO</p>
+                         </div>
+                         <div id="c" style="border-right-style: none;">
+                            <p align="center" t-field="o.payment_term_id.name"></p>
+                         </div>
+                         <div id="g">
+                            <p align="center">CANTIDAD</p>
+                         </div>
+                         <div id="g" style="border-right-style: none;">
+                             <t t-foreach="o.order_line" t-as="line">
+                                <p align="center" t-field="line.product_uom_qty"></p>
+                             </t>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">T.UNIDAD</p>
+                         </div>
+                         <div id="vi">
+                             <t t-foreach="o.order_line" t-as="line">
+                                <p align="center" t-field="line.product_uom.name"></p>
+                             </t>
+                         </div>
+                         <div id="c">
+                            <p align="center">PRECIO</p>
+                         </div>
+                         <div id="c" style="border-right-style: none;">
+                             <t t-foreach="o.order_line" t-as="line">
+                                <p align="center" t-field="line.price_subtotal"></p>
+                             </t>
+                         </div>
+                         <div id="j" style="border-right-style: none;">
+                            <p align="center">TOLERANCIA DE CANTIDAD</p>
+                         </div>
+                         <div id="j">
+                            <p align="center">TOLERANCIA DIAS DE ENTREGA</p>
+                         </div>
+                         <div id="gra" style="border-right-style: none;">
+                            <p align="center" />
+                         </div>
+                         <div id="j" style="border-right-style: none;">
+                            <p align="center">????</p>
+                         </div>
+                         <div id="j">
+                            <p align="center">?????</p>
+                         </div>
+                         <div id="gr" style="border-bottom-style: none;">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">ESPECIFICACIONES PELICULA E IMPRESION</p>
+                            </strong>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center">FORMA</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center" t-field="o.sheet_id.form_id.name"></p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">IMPRESA</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none; border-right-style: none;">
+                            <t t-if="o.sheet_id.print">
+                              <p align="center">SI</p>
+                            </t>
+                            <t t-else="o.sheet_id.no_print">
+                                <p align="center">NO</p>
+                            </t>
+                         </div>
+                         <div id="rec" style="border-left-style: none;">
+                            <strong>
+                                <t t-set="meter_programming" t-value="o.programing_meters()"/>
+                                    <p align="center" style="text-align:center; margin: 60px 0"
+                                          t-esc="meter_programming"/>
+                            </strong>
+                         </div>
+                         <div id="rec">
+                            <p align="center" style="text-align:center; margin: 60px 0">METROS PROGRAMADOS</p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">TIPO DE PRODUCTO</p>
+                         </div>
+                         <div id="e1">
+                            <p align="center" t-field="o.sheet_id.product_type_id.name"></p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">TIPO DE IMPRESION</p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.print_type_id.name"></p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">PELICULA</p>
+                         </div>
+                         <div id="e1">
+                            <p align="center" t-field="o.sheet_id.movie_type_id.name"></p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">CLASE DE IMPRESION</p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.print_class"></p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">COMPUESTO</p>
+                         </div>
+                         <div id="e1">
+                            <p align="center" t-field="o.sheet_id.chemical_composition.name"></p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">RODILLO PORTA PLANCHA</p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.repeat_id.name"></p>
+                         </div>
+                         <div id="mt">
+                            <p align="center" t-field="o.sheet_id.large_planned"></p>
+                         </div>
+                         <div id="mt" style="border-right-style: none;">
+                            <p align="center">LARGO PLANEADO</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center">COLOR DE PELICULA</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center" t-field="o.sheet_id.movie_type_id.color_id.name"></p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center">CABIDA ANCHA</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center" t-field="o.sheet_id.specification_width_planned"></p>
+                         </div>
+                         <div id="mt" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center" t-field="o.sheet_id.specification_width_id.name"></p>
+                         </div>
+                         <div id="mt" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center">ANCHO LAMINA</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">CALIBRE (um)</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.caliber_id.name"></p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">CABIDA LARGO</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.room_large"></p>
+                         </div>
+                         <div id="mt" style="border-bottom-style: none;  border-left-style: none;">
+                             <t t-if="multiple_mount == true">
+                                <p align="center">SI</p>
+                             </t>
+                             <t t-else="multiple_mount == false">
+                                <p align="center">NO</p>
+                             </t>
+                         </div>
+                         <div id="mt" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center">MONTAJE MULTIPLE</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center">TIPO DE COD. DE BARRAS</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;  border-left-style: none;">
+                             <t t-if="o.sheet_id.barcode_type_id">
+                                <p align="center" t-field="o.sheet_id.barcode_type_id.name"></p>
+                             </t>
+                             <t t-else="">
+                                 <p align="center">NO APLICA</p>
+                             </t>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;">
+                            <p align="center">ANCHO (mm)</p>
+                         </div>
+                         <div id="e1" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center" t-field="o.sheet_id.specification_width_id.name"></p>
+                         </div>
+                         <div id="mt" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center" t-field="o.sheet_id.specification_long_id.name"></p>
+                         </div>
+                         <div id="mt" style="border-bottom-style: none;  border-left-style: none;">
+                            <p align="center">CORTE/LARGO(mm)</p>
+                         </div>
+                         <div id="e1" style="border-right-style: none;">
+                            <p align="center">CODIGO DE BARRAS No</p>
+                         </div>
+                         <div id="e2" style="border-right-style: none;">
+                             <p align="center">esto es una prueba</p>
+                         </div>
+                         <div id="mt1">
+                            <p align="center" />
+                         </div>
+                         <div id="pa1">
+                            <p align="center" style="text-align:center; margin: 15px 0">COLORES CARA B</p>
+                         </div>
+                         <div id="mt1">
+                            <p align="center" style="text-align:center; margin: 15px 0">COLORES CARA A</p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">PANTONE</p>
+                         </div>
+                         <div id="vi">
+                            <p align="center">TIPO TINTA</p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center">REF. TINTA</p>
+                         </div>
+                         <div id="vi">
+                            <p align="center">LINEATURA</p>
+                         </div>
+                         <div id="vi">
+                            <p align="center">BCM</p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">PANTONE</p>
+                         </div>
+                         <div id="vi">
+                            <p align="center">TIPO TINTA</p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">REF. TINTA</p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">LINEATURA</p>
+                         </div>
+                         <div id="vi">
+                            <p align="center">BCM</p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                             <t t-if="o.sheet_id.print_color_ids">
+                                 <t t-foreach="o.sheet_id.print_color_ids[0]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.line"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi">
+                            <t t-if="o.sheet_id.print_color_ids">
+                                 <t t-foreach="o.sheet_id.print_color_ids[0]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.categ_id.name"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <t t-if="o.sheet_id.print_color_ids">
+                                 <t t-foreach="o.sheet_id.print_color_ids[0]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.default_code"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi">
+                            <t t-if="o.sheet_id.print_color_ids">
+                                 <t t-foreach="o.sheet_id.print_color_ids[0]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.lineatura"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <t t-if="o.sheet_id.print_color_ids">
+                                 <t t-foreach="o.sheet_id.print_color_ids[0]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.bcm"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="mt1">
+                            <p align="center" />
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>1">
+                                 <t t-foreach="o.sheet_id.print_color_ids[1]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.line"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi">
+                            <t t-if="len(o.sheet_id.print_color_ids)>1">
+                                 <t t-foreach="o.sheet_id.print_color_ids[1]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.categ_id.name"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>1">
+                                 <t t-foreach="o.sheet_id.print_color_ids[1]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.default_code"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi">
+                            <t t-if="len(o.sheet_id.print_color_ids)>1">
+                                 <t t-foreach="o.sheet_id.print_color_ids[1]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.lineatura"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>1">
+                                 <t t-foreach="o.sheet_id.print_color_ids[1]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.bcm"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="mt1">
+                            <p align="center" />
+                         </div>
+                         <div id="vi" style="border-right-style: none; border-bottom-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>2">
+                                 <t t-foreach="o.sheet_id.print_color_ids[2]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.line"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>2">
+                                 <t t-foreach="o.sheet_id.print_color_ids[2]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.categ_id.name"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;  border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>2">
+                                 <t t-foreach="o.sheet_id.print_color_ids[2]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.default_code"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>2">
+                                 <t t-foreach="o.sheet_id.print_color_ids[2]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.lineatura"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none;  border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>2">
+                                 <t t-foreach="o.sheet_id.print_color_ids[2]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.bcm"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="mt1" style="border-bottom-style: none;">
+                            <p align="center" />
+                         </div>
+                         <div id="vi" style="border-bottom-style: none; border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>3">
+                                 <t t-foreach="o.sheet_id.print_color_ids[3]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.line"/></t>
+                                </t>
+                            </t>
+                            <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-right-style: none; border-bottom-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>3">
+                                 <t t-foreach="o.sheet_id.print_color_ids[3]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.categ_id.name"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;  border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>3">
+                                 <t t-foreach="o.sheet_id.print_color_ids[3]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.product_id.default_code"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>3">
+                                 <t t-foreach="o.sheet_id.print_color_ids[3]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.lineatura"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none; border-right-style: none;">
+                            <t t-if="len(o.sheet_id.print_color_ids)>3">
+                                 <t t-foreach="o.sheet_id.print_color_ids[3]" t-as="line">
+                                    <t t-if="line"><p align="center" t-field="line.bcm"/></t>
+                                </t>
+                             </t>
+                             <t t-else=""></t>
+                         </div>
+                         <div id="mt1" style="border-bottom-style: none;">
+                            <p align="center" />
+                         </div>
+                         <div id="en">
+                            <p align="center" style="text-align:center; margin: 15px 0">ESPECIFICACIONES REBOBINE</p>
+                         </div>
+                         <div id="en1">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">ESPECIFICACIONES OTROS PROCESOS</p>
+                            </strong>
+                         </div>
+                         <div id="f">
+                            <p align="center">TIPO DE CORTE</p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.presentation_id.name"></p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center">BANDA GUILLOTINADA</p>
+                         </div>
+                         <div id="f">
+                             <t t-if="o.sheet_id.guillotine">
+                                <p align="center">SI</p>
+                             </t>
+                             <t t-else="">
+                                <p align="center">NO</p>
+                             </t>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">DIAMETRO CORE</p>
+                         </div>
+                         <div id="f">
+                            <p align="center" t-field="o.sheet_id.core_diameter_id.name"/>
+                         </div>
+                         <div id="f">
+                            <p align="center">BANDA PREFORMADA</p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                             <t t-if="o.sheet_id.presentation_id.name == 'PREFORMADO'">
+                                 <p align="center">SI</p>
+                             </t>
+                             <t t-else=""><p>NO</p></t>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center">GUILLOTINADA A</p>
+                         </div>
+                         <div id="f">
+                            <p align="center" t-field="o.sheet_id.guillotine_mm"></p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">ANCHO CORE(mm)</p>
+                         </div>
+                         <div id="f">
+                            <p align="center" t-field="o.sheet_id.width_core"/>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center">No. MOLDE</p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.mold_id.name"/>
+                         </div>
+                         <div id="f" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">TIPO DE SELLE</p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.seal_type_id.name"/>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">PESO POR ROLLO(Kg)</p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.roll_weight"></p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center">PESTAÑA PREFORMADO</p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.tab_length"/>
+                         </div>
+                         <div id="f" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">PESTAÑA SELLE</p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.sealing_tab"></p>
+                         </div>
+                         <div id="vi" style="border-bottom-style: none;   border-right-style: none;">
+                            <p align="center">METROS POR ROLLO</p>
+                         </div>
+                         <div id="f" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.meter_per_roll"></p>
+                         </div>
+                         <div id="en2" style="border-bottom-style: none;">
+                            <p align="center" />
+                         </div>
+                         <div id="en2" style="border-right-style: none;  border-bottom-style: none;">
+                            <p align="center">EMBOBINADO No</p>
+                         </div>
+                         <div id="an" style="border-bottom-style: none;">
+                            <p align="center">ESPECIFICACIONES PEGADO Y CORTE</p>
+                         </div>
+                         <div id="f">
+                            <p align="center">ADHESIVO TERMICO</p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <t t-if="o.sheet_id.thermal_adhesive">
+                                <p align="center">SI</p>
+                            </t>
+                            <t t-else="">
+                                 <p align="center">NO</p>
+                            </t>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center">LENGUETA</p>
+                         </div>
+                         <div id="f">
+                            <t t-if="o.sheet_id.tongue">
+                                <p align="center">SI</p>
+                            </t>
+                             <t t-else="">
+                                <p align="center">NO</p>
+                             </t>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">ROMBO</p>
+                         </div>
+                         <div id="f">
+                             <t t-if="o.sheet_id.rhombus">
+                                <p align="center">SI</p>
+                             </t>
+                             <t t-else="">
+                                 <p align="center">NO</p>
+                             </t>
+                         </div>
+                         <div id="f">
+                            <p align="center">TIPO GRAFILADO</p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.drawn_presentation_id.name"></p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center">COLOR CINTILLA</p>
+                         </div>
+                         <div id="f">
+                            <p align="center" t-field="o.sheet_id.color_movie_id.name"></p>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">UBICACION TRASLAPE</p>
+                         </div>
+                         <div id="f">
+                            <p align="center" t-field="o.sheet_id.overlap_location_id.name"></p>
+                         </div>
+                         <div id="f">
+                            <p align="center">PASO GRAFILADO</p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.drawn_pass_id.name"></p>
+                         </div>
+                         <div id="f" style="border-right-style: none;">
+                            <p align="center">MICROPERFORADO</p>
+                         </div>
+                         <div id="f">
+                             <t t-if="not o.sheet_id.microperforated">
+                                <p align="center">NO</p>
+                             </t>
+                             <t t-else="">
+                                 <p align="center">SI</p>
+                             </t>
+                         </div>
+                         <div id="vi" style="border-right-style: none;">
+                            <p align="center">TIPO DE EMPALME</p>
+                         </div>
+                         <div id="f">
+                            <p align="center" t-field="o.sheet_id.number_splices_id.name"/>
+                         </div>
+                         <div id="my" style="border-bottom-style: none; border-right-style: none;">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">DISTANCIA DE GRAFILADO</p>
+                            </strong>
+                         </div>
+                         <div id="my" style="border-bottom-style: none;">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">DISTANCIA DE MICROPERFORADO</p>
+                            </strong>
+                         </div>
+                         <div id="my1" style="border-right-style: none;  border-bottom-style: none;">
+                            <p align="center">EMPALMES x ROLLO</p>
+                         </div>
+                         <div id="my2" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.embossing_number_id.name"></p>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center">LONGITUDINAL</p>
+                         </div>
+                         <div id="my4" style="border-bottom-style: none;">
+                             <p align="center" t-field="o.sheet_id.long_drawn_pass"></p>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none;">
+                            <p align="center">TRANSVERSAL</p>
+                         </div>
+                         <div id="my4" style="border-bottom-style: none; border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.cross_drawn_pass"></p>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none;">
+                            <p align="center">LONG 1</p>
+                         </div>
+                         <div id="my4" style="border-right-style: none; border-bottom-style: none;">
+                            <t t-if="o.sheet_id.microperforated_ids">
+                                <t t-foreach="o.sheet_id.microperforated_ids[0]" t-as="line">
+                                    <p align="center" t-field="line.cross"></p>
+                                </t>
+                            </t>
+                             <t t-else="">
+                                 <p align="center">0.0</p>
+                             </t>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none;">
+                            <p align="center">TRANSV 1</p>
+                         </div>
+                         <div id="my4" style="border-bottom-style: none;">
+                            <t t-if="o.sheet_id.microperforated_ids">
+                                <t t-foreach="o.sheet_id.microperforated_ids[0]" t-as="line">
+                                    <p align="center" t-field="line.logitudinal"></p>
+                                </t>
+                            </t>
+                             <t t-else="">
+                                 <p align="center">0.0</p>
+                             </t>
+                         </div>
+                         <div id="my1" style="border-bottom-style: none;  border-right-style: none;">
+                            <p align="center">COLOR CINTA</p>
+                         </div>
+                         <div id="my2" style="border-bottom-style: none;">
+                            <p align="center" t-field="o.sheet_id.splicing_tape_id.name" />
+                         </div>
+                         <div id="my2">
+                            <p align="center">LONG.PARCIAL</p>
+                         </div>
+                         <div id="my2">
+                             <p align="center" t-field="o.sheet_id.long_partial"></p>
+                         </div>
+                         <div id="my3" style="border-left-style: none;">
+                            <p align="center">LONG 2</p>
+                         </div>
+                         <div id="my4">
+                            <t t-if="len(o.sheet_id.microperforated_ids)>1">
+                                <t t-foreach="o.sheet_id.microperforated_ids[1]" t-as="line">
+                                    <p align="center" t-field="line.cross"></p>
+                                </t>
+                            </t>
+                             <t t-else="">
+                                 <p align="center">0.0</p>
+                             </t>
+                         </div>
+                         <div id="my3" style="border-left-style: none;">
+                            <p align="center">TRANSV 2</p>
+                         </div>
+                         <div id="my4">
+                            <t t-if="len(o.sheet_id.microperforated_ids)>1">
+                                <t t-foreach="o.sheet_id.microperforated_ids[1]" t-as="line">
+                                    <p align="center" t-field="line.logitudinal"></p>
+                                </t>
+                            </t>
+                             <t t-else="">
+                                 <p align="center">0.0</p>
+                             </t>
+                         </div>
+                         <div id="en">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">PLANEACION OTROS PROCESOS</p>
+                            </strong>
+                         </div>
+                         <div id="my2">
+                            <p align="center">ANCHO DE TRASLAPE</p>
+                         </div>
+                         <div id="my2" style="border-right-style: none;">
+                            <p align="center" t-field="o.sheet_id.overlap_id.name"></p>
+                         </div>
+                         <div id="my2" style="border-right-style: none;">
+                            <p align="center" />
+                         </div>
+                         <div id="my2">
+                            <p align="center" />
+                         </div>
+                         <div id="my3" style="border-right-style: none;">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">SUBPROCESO</p>
+                            </strong>
+                         </div>
+                         <div id="my3">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">MAQUINA</p>
+                            </strong>
+                         </div>
+                         <div id="gr">
+                            <strong>
+                               <p align="center" style="text-align:center; margin: 15px 0">ESPECIFICACIONES EMPAQUE Y EMBALAJE</p>
+                            </strong>
+                         </div>
+                         <div id="lf" style="border-top-style: none;">
+                            <strong>
+                               <p>OBSERVACIONES DE FICHA Y PEDIDO</p>
+                            </strong>
+                            <h5><span align="center" t-field="o.sheet_id.change_observation"/></h5>
+                         </div>
+                         <div id="my3" style="border-right-style: none;">
+                            <strong>
+                               <t t-if="o.sheet_id.routing_id.operation_ids">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[0]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3">
+                            <strong>
+                                <t t-if="o.sheet_id.routing_id.operation_ids">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[0]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.workcenter_id.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3" style="border-right-style: none; border-bottom-style: none;">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>1">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[1]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none;">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>1">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[1]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.workcenter_id.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none; border-right-style: none;">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>2">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[2]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3" style="border-bottom-style: none;">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>2">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[2]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.workcenter_id.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3" style="border-right-style: none;">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>3">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[3]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>3">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[3]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.workcenter_id.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3" style="border-right-style: none;">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>4">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[4]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                         <div id="my3">
+                            <strong>
+                               <t t-if="len(o.sheet_id.routing_id.operation_ids)>4">
+                                    <t t-foreach="o.sheet_id.routing_id.operation_ids[4]" t-as="line">
+                                        <p align="center" style="text-align:center; margin: 15px 0"
+                                           t-field="line.workcenter_id.name"/>
+                                    </t>
+                                </t>
+                                <t t-else=""></t>
+                            </strong>
+                         </div>
+                      </div>
+                   </div>
+                </t>
+             </t>
+          </t>
+    </template>
+</odoo>

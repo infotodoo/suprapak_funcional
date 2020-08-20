@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="view_otif_report_tree" model="ir.ui.view">
+            <field name="name">otif.report.wizard</field>
+            <field name="model">otif.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Validation date from Otif">
+                    <field invisible="True" name="state"/>
+                    <field name="name" invisible="True"/>
+                    <group states="choose" string="Filters">
+                        <field name="start_datetime"/>
+                        <field name="end_datetime"/>
+                    </group>
+                    <div states="get">
+                        <h2>Report Complete</h2>
+                        <p>Here is the report: <field name="data" readonly="True" filename="name"/></p>
+                        <!--<p>Here is the attachement: <field name="attachment_id" readonly="True"/></p>-->
+                        <p>Here is the datas: <field name="data_attachment" readonly="True" filename="name"/></p>
+                    </div>
+                    <footer states="choose">
+                        <button name="generate_file" string="Report" type="object" class="btn-primary"/>
+                        <button special="cancel" string="Cancel" type="object" class="btn-secondary"/>
+                    </footer>
+                    <footer states="get">
+                        <button special="cancel" string="Close" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="create_otif_report_wizard" model="ir.actions.act_window">
+            <field name="name">Wizard Otif</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">otif.report.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem action="create_otif_report_wizard" id="otif_report_wizard" parent="sale.menu_sale_report" name="Otif Report" sequence="2" />
+    </data>
+</odoo>

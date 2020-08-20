@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_saleorder_document_inherit_sale_supra" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_quantity']" positon="before">
+           <th name="th_material" class="text-right">Material</th>
+             <th name="th_drawn_type" class="text-right">Drawn Type</th>
+             <th name="th_movie_type" class="text-right">Movie Type</th>
+             <th name="th_specification_width" class="text-right">Specification Width</th>
+             <th name="th_specification_long" class="text-right">Specification Long</th>
+             <th name="th_caliber" class="text-right">Caliber</th>
+             <th name="th_tongue" class="text-right">Tongue</th>
+             <th name="th_thermal_adhesive" class="text-right">Termal Adhesive</th>
+        </xpath>
+       <xpath expr="//td[@name='td_quantity']" position="after">
+               <td name="th_material" class="text-right">
+                  <span t-field="line.material_id"/>
+               </td>
+                <td name="th_drawn_type" class="text-right">
+                   <span t-field="line.drawn_type_id"/>
+                </td>
+                <td name="th_movie_type" class="text-right">
+                   <span t-field="line.movie_type_id"/>
+                </td>
+                <td name="th_specification_width" class="text-right">
+                   <span t-field="line.specification_width"/>
+                </td>
+                <td name="th_specification_long" class="text-right">
+                   <span t-field="line.specification_long"/>
+                </td>
+                <td name="th_caliber" class="text-right">
+                   <span t-field="line.caliber_id"/>
+                </td>
+                <td name="th_tongue" class="text-right">
+                   <span t-field="line.tongue"/>
+                </td>
+                <td name="th_thermal_adhesive" class="text-right">
+                   <span t-field="line.thermal_adhesive"/>
+                </td>
+       </xpath>
+    </template>
+</odoo>

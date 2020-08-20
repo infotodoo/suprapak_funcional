@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+      <record id="sale_note_form" model="ir.ui.view">
+        <field name="name">sale.note.form</field>
+        <field name="model">sale.note</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="note_date" readonly="1"/>
+                        <field name="name"/>
+                        <field name="create_uid" readonly="1"/>
+                        <field name="type" readonly="1"/>
+                        <field name="sale_order_id" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+      </record>
+    <record model="ir.ui.view" id="view_order_form_inherit">
+            <field name="name">view.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='other_information']" position="after">
+                        <page name="general_note" string="General Note" sequence="100">
+                               <group nolabel="1">
+
+                                        <field name="sale_note_ids" nolabel="1" context="{'default_type':'sale'}" domain="[('sale_order_id', '=', id)]">
+                                            <h3>Sale Note:</h3>
+                                                <tree editable="top">
+                                                    <field name="type" readonly="1"/>
+                                                    <field name="note_date"/>
+                                                    <field name="name"/>
+                                                    <field name="create_uid" readonly="1"/>
+                                                    <field name="sale_order_id" invisible="1"/>
+                                                </tree>
+                                        </field>
+                               </group>
+                        </page>
+                </xpath>
+
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_picking_form_inherit">
+            <field name="name">view.picking.form.inherited</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='note']" position="after">
+                        <page name="general_note" string="General Note" sequence="100">
+                               <field name="sale_id" invisible="1"/>
+                               <group nolabel="1">
+                                        <field name="sale_note_ids" nolabel="1" context="{'default_type':'warehouse'}">
+                                            <h3>Warehouse Note:</h3>
+                                                <tree editable="top">
+                                                    <field name="type" readonly="1"/>
+                                                    <field name="note_date"/>
+                                                    <field name="name"/>
+                                                    <field name="create_uid" readonly="1"/>
+                                                    <field name="sale_order_id" invisible="1"/>
+                                                </tree>
+                                        </field>
+                               </group>
+                        </page>
+                </xpath>
+
+            </field>
+    </record>
+</odoo>

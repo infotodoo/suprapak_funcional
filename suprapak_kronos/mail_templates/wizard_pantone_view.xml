@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="select_pantone_view_form" model="ir.ui.view">
+            <field name="name">select.pantone.form</field>
+            <field name="model">select.pantone</field>
+            <field name="arch" type="xml">
+                <form string="Pantone">
+                    <group class="oe_title">
+                        <field name="pantone_id"/>
+                    </group>
+                    <footer>
+                        <button string="Confirm"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="select_pantone_action" model="ir.actions.act_window">
+            <field name="name">Pantone</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">select.pantone</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="select_pantone_view_form"/>
+            <field name="target">new</field>
+        </record>
+</odoo>
+

@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="stock_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_id']" position="after">
+                    <field name="out" invisible="1"/>
+                    <field name="exportation_billing" attrs="{'invisible':[('out', '!=',True)]}"/>
+                    <field name="logistic_operator_id" options="{'no_create': True, 'no_create_edit':True}"
+                    attrs="{'invisible':[('out', '!=',True)]}"/>
+                    <field name="number_guide" attrs="{'invisible':[('out', '!=',True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="date_client" attrs="{'invisible':[('out', '!=',True)]}"/>
+                    <field name="delivery_time" attrs="{'invisible':[('out', '!=',True)]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_logistic_operator">
+            <field name="name">Logistic Operator</field>
+            <field name="res_model">logistic.operator</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="parent_menu_logistic_operator"
+                  name="Logistic Operator"
+                  parent="stock.menu_stock_config_settings"
+                  action="action_logistic_operator"
+                  groups="stock.group_stock_manager"
+                  sequence="110"/>
+    </data>
+</odoo> 

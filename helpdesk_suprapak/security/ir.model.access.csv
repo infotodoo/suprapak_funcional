@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_service_manager,service.manager,model_service,helpdesk.group_helpdesk_manager,1,1,1,1
+access_print_manager,print.manager,model_print,helpdesk.group_helpdesk_manager,1,1,1,1
+access_paste_manager,paste.manager,model_paste,helpdesk.group_helpdesk_manager,1,1,1,1
+access_technic_manager,technic.manager,model_technic,helpdesk.group_helpdesk_manager,1,1,1,1
+access_cut_manager,cut.manager,model_cut,helpdesk.group_helpdesk_manager,1,1,1,1
+access_rewind_manager,rewind.manager,model_rewind,helpdesk.group_helpdesk_manager,1,1,1,1

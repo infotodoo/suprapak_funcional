@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="sale_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']" position="before">
+                    <field name="material_id"/>
+                    <field name="drawn_type_id"/>
+                    <field name="movie_type_id"/>
+                    <field name="specification_width"/>
+                    <field name="specification_long"/>
+                    <field name="caliber_id"/>
+                    <field name="tongue"/>
+                    <field name="thermal_adhesive"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="sale_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="replace">
+                    <field name="sheet_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_case_form_view_oppor" model="ir.ui.view">
+            <field name="name">crm.lead.oppor.inherited.crm</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_sale_quotations_new']" position="before">
+                    <button string="New data sheet" name="action_new_data_sheet" type="object" class="oe_highlight"
+                        attrs="{'invisible': ['|', ('type', '=', 'lead'), '&amp;', ('probability', '=', 0), ('active', '=', False)]}"/>
+                </xpath>
+                <button name="action_view_sale_quotation" position="after">
+                    <button class="oe_stat_button" type="object"
+                        name="action_view_data_sheet" icon="fa-pencil-square-o" attrs="{'invisible': [('type', '=', 'lead')]}">
+                        <field name="sheet_count" widget="statinfo" string="sheets"/>
+                    </button>
+                </button>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,268 @@
+<odoo>
+    <data>
+        <menuitem id="parent_menu_data_sheet"
+                  name="Kronos"
+                  groups="group_data_sheet_user"
+                  icon="fa-wrench"
+                  web_icon="suprapak_kronos,static/description/icon.png"
+                  sequence="36"/>
+
+        <menuitem id="menu_data_sheet_dashboard"
+                  name="Kronos"
+                  action="action_data_sheet"
+                  parent="parent_menu_data_sheet"
+                  sequence="5"/>
+
+        <menuitem id="menu_data_sheet_conf"
+                  name="Configuration"
+                  groups="group_data_sheet_admin"
+                  parent="parent_menu_data_sheet"
+                  sequence="10"/>
+
+        <menuitem id="menu_data_product_type"
+                  name="Product type"
+                  action="action_data_product_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="15"/>
+
+        <menuitem id="menu_data_drawn_type"
+                  name="Drawn type"
+                  action="action_data_drawn_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="20"/>
+
+        <menuitem id="menu_data_movie"
+                  name="Movie Type"
+                  action="action_data_movie"
+                  parent="menu_data_sheet_conf"
+                  sequence="25"/>
+
+        <menuitem id="menu_data_movie_type"
+                  name="Compound Code"
+                  action="action_data_movie_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="30"/>
+
+        <menuitem id="menu_data_movie_color"
+                  name="Colors"
+                  action="action_data_movie_color"
+                  parent="menu_data_sheet_conf"
+                  sequence="35"/>
+
+        <menuitem id="menu_data_caliber_type"
+                  name="Caliber type"
+                  action="action_data_caliber_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="40"/>
+
+        <menuitem id="menu_data_tag_form"
+                  name="Tag Form"
+                  action="action_data_tag_form"
+                  parent="menu_data_sheet_conf"
+                  sequence="45"/>
+
+        <menuitem id="menu_data_material"
+                  name="Material"
+                  action="action_data_material"
+                  parent="menu_data_sheet_conf"
+                  sequence="50"/>
+
+        <menuitem id="menu_data_application_mode"
+                  name="Application Mode"
+                  action="action_data_application_mode"
+                  parent="menu_data_sheet_conf"
+                  sequence="55"/>
+
+        <menuitem id="menu_data_application_position"
+                  name="Application Position"
+                  action="action_data_application_position"
+                  parent="menu_data_sheet_conf"
+                  sequence="60"/>
+
+        <menuitem id="menu_data_form"
+                  name="Form"
+                  action="action_data_form"
+                  parent="menu_data_sheet_conf"
+                  sequence="65"/>
+
+        <menuitem id="menu_specification_width"
+                  name="Specification Width"
+                  action="action_specification_width"
+                  parent="menu_data_sheet_conf"
+                  sequence="70"/>
+
+        <menuitem id="menu_specification_long"
+                  name="Specification Long"
+                  action="action_specification_long"
+                  parent="menu_data_sheet_conf"
+                  sequence="75"/>
+
+        <menuitem id="menu_width_overlap"
+                  name="Width Overlap"
+                  action="action_width_overlap"
+                  parent="menu_data_sheet_conf"
+                  sequence="80"/>
+
+        <menuitem id="menu_overlap_location"
+                  name="Overlap Location"
+                  action="action_overlap_location"
+                  parent="menu_data_sheet_conf"
+                  sequence="85"/>
+
+        <menuitem id="menu_presentation"
+                  name="Presentation"
+                  action="action_presentation"
+                  parent="menu_data_sheet_conf"
+                  sequence="90"/>
+
+        <menuitem id="menu_core_diameter"
+                  name="Core Diameter"
+                  action="action_core_diameter"
+                  parent="menu_data_sheet_conf"
+                  sequence="95"/>
+
+        <menuitem id="menu_embossing_number"
+                  name="Embossing Number"
+                  action="action_embossing_number"
+                  parent="menu_data_sheet_conf"
+                  sequence="100"/>
+
+        <menuitem id="menu_number_splices"
+                  name="Number Splices"
+                  action="action_number_splices"
+                  parent="menu_data_sheet_conf"
+                  sequence="105"/>
+
+        <menuitem id="menu_splice_type"
+                  name="Splice Type"
+                  action="action_splice_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="110"/>
+
+        <menuitem id="menu_splicing_tape"
+                  name="Splicing Tape"
+                  action="action_splicing_tape"
+                  parent="menu_data_sheet_conf"
+                  sequence="115"/>
+
+        <menuitem id="menu_seal_type"
+                  name="Seal Type"
+                  action="action_seal_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="120"/>
+
+        <menuitem id="menu_performed"
+                  name="Performed"
+                  action="action_performed"
+                  parent="menu_data_sheet_conf"
+                  sequence="125"/>
+
+        <menuitem id="menu_barcode_type"
+                  name="Barcode Type"
+                  action="action_barcode_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="130"/>
+
+        <menuitem id="menu_mechanic_plan"
+                  name="Mechanic Plan"
+                  action="action_mechanic_plan"
+                  parent="menu_data_sheet_conf"
+                  sequence="135"/>
+
+        <menuitem id="menu_microperforated"
+                  name="Microperforated"
+                  action="action_microperforated"
+                  parent="menu_data_sheet_conf"
+                  sequence="140"/>
+
+        <menuitem id="menu_drawn_presentation"
+                  name="Drawn Presentation"
+                  action="action_drawn_presentation"
+                  parent="menu_data_sheet_conf"
+                  sequence="145"/>
+
+        <!--<menuitem id="menu_cold_foil"
+                  name="Cold Foil"
+                  action="action_cold_foil"
+                  parent="menu_data_sheet_conf"
+                  sequence="150"/>-->
+
+        <menuitem id="menu_inks"
+                  name="Inks"
+                  action="action_inks"
+                  parent="menu_data_sheet_conf"
+                  sequence="155"/>
+
+        <menuitem id="menu_designer"
+                  name="Designer"
+                  action="action_designer"
+                  parent="menu_data_sheet_conf"
+                  sequence="160"/>
+
+        <menuitem id="menu_color_scale"
+                  name="Color Scale"
+                  action="action_color_scale"
+                  parent="menu_data_sheet_conf"
+                  sequence="165"/>
+
+        <menuitem id="menu_control_change"
+                  name="Control Change"
+                  action="action_control_change"
+                  parent="menu_data_sheet_conf"
+                  sequence="170"/>
+
+        <menuitem id="menu_tape"
+                  name="Tape"
+                  action="action_tape"
+                  parent="menu_data_sheet_conf"
+                  sequence="175"/>
+
+        <menuitem id="menu_for_superlon"
+                  name="For Superlon"
+                  action="action_for_superlon"
+                  parent="menu_data_sheet_conf"
+                  sequence="180"/>
+
+        <menuitem id="menu_repeat"
+                  name="Repeat"
+                  action="action_repeat"
+                  parent="menu_data_sheet_conf"
+                  sequence="185"/>
+
+        <menuitem id="menu_print_type"
+                  name="Print Type"
+                  action="action_print_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="190"/>
+
+        <menuitem id="menu_chemical_composition"
+                  name="Chemical Composition"
+                  action="action_chemical_composition"
+                  parent="menu_data_sheet_conf"
+                  sequence="195"/>
+
+        <menuitem id="menu_adhesive_type"
+                  name="Adhesive Type"
+                  action="action_adhesive_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="200"/>
+
+        <menuitem id="menu_drawn_pass"
+                  name="Drawn Pass"
+                  action="action_drawn_pass"
+                  parent="menu_data_sheet_conf"
+                  sequence="205"/>
+
+        <menuitem id="menu_drawn_pass"
+                  name="Drawn Pass"
+                  action="action_drawn_pass"
+                  parent="menu_data_sheet_conf"
+                  sequence="210"/>
+
+        <menuitem id="menu_pantone_print"
+                  name="Pantone"
+                  action="action_pantone_print"
+                  parent="menu_data_sheet_conf"
+                  sequence="215"/>
+    </data>
+</odoo>
