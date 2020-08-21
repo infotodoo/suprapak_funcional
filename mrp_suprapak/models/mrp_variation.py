@@ -122,7 +122,7 @@ class MrpVariation(models.Model):
             
             self.total_variation_real = (total_real/cantidad_esperada)*cantidad_total
             self.total_variation_standard = (total_standard/cantidad_esperada)*cantidad_total
-            self.total_variation_standard = total_variation
+            self.total_variation_variation = total_variation
 
         return {
             'type': 'ir.actions.act_window',
