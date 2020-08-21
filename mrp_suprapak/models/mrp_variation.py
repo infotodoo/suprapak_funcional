@@ -55,7 +55,6 @@ class MrpVariation(models.Model):
     
         workorders = self.env['mrp.workorder'].search(domain)
         plannifiqued = self.production_ids.product_qty
-        produced = self.production_ids.finished_move_line_ids.product_qty
 
 
         workorder_prog = [x.display_name for x in workorders.filtered(lambda x: x.state == 'progress' and x.working_state in ('normal', 'done'))]
@@ -63,6 +62,13 @@ class MrpVariation(models.Model):
             raise ValidationError('Las siguientes Ordenes de Trabajo estan en proceso. \n' 
                                     'Por favor bloquearlas para generar el reporte. \n\n'
                                     '%s' % workorder_prog)
+
+        if not self.production_ids.finished_move_line_ids:
+            raise ValidationError('Deben haber productos finalizados en la orden seleccionada')
+        else:
+            produced = [y.qty_done for y in self.production_ids.finished_move_line_ids][-1]
+
+
         var_lines_ids = []
         for workorder in workorders:
             time = sum([x.duration for x in workorder.time_ids])/60
