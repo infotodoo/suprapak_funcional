@@ -34,9 +34,9 @@
                             </group>
                             <group>
                                 <field name="journal_id" attrs="{'readonly': [('state','=','accounted')]}"/>
-                                <field name="total_variation_standard"/>
+                              <!--  <field name="total_variation_standard"/>
                                 <field name="total_variation_real"/>
-                                <field name="total_variation_variation"/>
+                                <field name="total_variation_variation"/>-->
                             </group>
                         </group>
                         <notebook>
