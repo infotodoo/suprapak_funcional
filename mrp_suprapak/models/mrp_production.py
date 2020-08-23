@@ -61,8 +61,8 @@ class MrpProduction(models.Model):
                 maq = []
                 for workorder in record.workorder_ids:
                     workorder.button_pending()
-                    time = sum([x.duration for x in workorder.time_ids])
-                    #time= workorder.duration
+                    #time = sum([x.duration for x in workorder.time_ids])
+                    time= workorder.duration
                     time_corte= time
                     time = (time - workorder.estimated_time) / 60
                     cost_mod = workorder.workcenter_id.costs_hour_mod_real
