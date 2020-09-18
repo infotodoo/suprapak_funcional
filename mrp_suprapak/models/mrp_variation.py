@@ -22,6 +22,7 @@ class MrpVariation(models.Model):
     end_time = fields.Datetime('Fecha fin', required=True)
     line_ids = fields.One2many('mrp.variation.line', 'variation_id', 'Detalle de Variaciones')
     journal_id = fields.Many2one('account.journal', 'Diario')
+    action = fields.Many2one('ir.cron', 'Accion Automática')
       
     def block_workorders(self):
         self.ensure_one()
