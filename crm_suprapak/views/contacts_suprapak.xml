@@ -8,7 +8,7 @@
                 <button name="action_view_sale_quotation" position="after">
                     <button class="oe_stat_button" type="object"
                         name="action_view_ticket" icon="fa-pencil-square-o" attrs="{'invisible': [('type', '=', 'lead')]}">
-                        <field name="ticket_count" widget="statinfo" string="Ticket"/>
+                        <field name="ticket_counts" widget="statinfo" string="Ticket"/>
                     </button>
                 </button>
             </field>
@@ -16,7 +16,7 @@
         <record id="crm_inherit_helpdesk" model="ir.ui.view">
             <field name="name">helpdesk.ticket.crm</field>
             <field name="model">helpdesk.ticket</field>
-            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="inherit_id" ref="helpdesk_sale.helpdesk_ticket_view_form_inherit_helpdesk_invoicing"/>
             <field name="priority" eval="18"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='sale_order_id']" position="after">

@@ -3,13 +3,13 @@ from odoo import models,api,fields
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
-    ticket_count = fields.Integer('Number of Tickets', compute = '_compute_tickets')
+    ticket_counts = fields.Integer('Number of Tickets', compute = '_compute_tickets')
     ticket_ids = fields.One2many('helpdesk.ticket','opportunity_id','Tickets')
 
     def _compute_tickets(self):
         for ticket in self:
             count = len(ticket.ticket_ids)
-            ticket.ticket_count = count
+            ticket.ticket_counts = count
 
     def action_view_ticket(self):
         action = self.env.ref('helpdesk.helpdesk_ticket_action_main_tree').read()[0]
