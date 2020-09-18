@@ -22,6 +22,7 @@ class MrpVariation(models.Model):
     end_time = fields.Datetime('Fecha fin', required=True)
     line_ids = fields.One2many('mrp.variation.line', 'variation_id', 'Detalle de Variaciones')
     journal_id = fields.Many2one('account.journal', 'Diario')
+    action = fields.Many2one('ir.cron', 'Accion Automática')
       
     def block_workorders(self):
         self.ensure_one()
@@ -54,20 +55,33 @@ class MrpVariation(models.Model):
             
     
         workorders = self.env['mrp.workorder'].search(domain)
-        plannifiqued = self.production_ids.product_qty
-        produced = self.production_ids.finished_move_line_ids.product_qty
-
+       
 
         workorder_prog = [x.display_name for x in workorders.filtered(lambda x: x.state == 'progress' and x.working_state in ('normal', 'done'))]
         if workorder_prog:
             raise ValidationError('Las siguientes Ordenes de Trabajo estan en proceso. \n' 
                                     'Por favor bloquearlas para generar el reporte. \n\n'
                                     '%s' % workorder_prog)
+
+        if not self.production_ids.finished_move_line_ids:
+            raise ValidationError('Deben haber productos finalizados en la orden seleccionada')
+        else:
+            produced = [y.qty_done for y in self.production_ids.finished_move_line_ids][-1]
+
+
         var_lines_ids = []
         for workorder in workorders:
             time = sum([x.duration for x in workorder.time_ids])/60
             time_estimated = (workorder.duration_expected)/60
 
+            # plannifiqued = self.production_ids.product_qty
+            plannifiqued = workorder.qty_production
+
+            if not self.production_ids.finished_move_line_ids:
+                raise ValidationError('Deben haber productos finalizados en la orden seleccionada')
+            else:
+                produced=workorder.production_id.qty_produced
+                
             # Costos Estandar
             mod_standard = time_estimated * workorder.workcenter_id.costs_hour_mod
             cif_standard = time_estimated * workorder.workcenter_id.costs_hour_cif
@@ -107,16 +121,16 @@ class MrpVariation(models.Model):
             var_line = mrp_var_line_obj.create(vals)
             var_lines_ids.append(var_line.id)
 
-        if  len(workorders)>0:
-            cantidad_esperada = workorder.qty_production   
-            cantidad_total = [y.qty_finished for y in self.line_ids][-1]
-            total_real = sum([y.mod_real for y in self.line_ids]) + sum([y.cif_real for y in self.line_ids]) + sum([y.maq_real for y in self.line_ids])  
-            total_standard = sum([y.mod_standard for y in self.line_ids]) + sum([y.cif_standard for y in self.line_ids]) + sum([y.maq_standard for y in self.line_ids])  
-            total_variation = sum([y.mod_variation for y in self.line_ids]) + sum([y.cif_variation for y in self.line_ids]) + sum([y.maq_variation for y in self.line_ids])        
+       # if  len(workorders)>0:
+       #     cantidad_esperada = workorder.qty_production   
+       #     cantidad_total = [y.qty_finished for y in self.line_ids][-1]
+       #     total_real = sum([y.mod_real for y in self.line_ids]) + sum([y.cif_real for y in self.line_ids]) + sum([y.maq_real for y in self.line_ids])  
+       #     total_standard = sum([y.mod_standard for y in self.line_ids]) + sum([y.cif_standard for y in self.line_ids]) + sum([y.maq_standard for y in self.line_ids])  
+       #     total_variation = sum([y.mod_variation for y in self.line_ids]) + sum([y.cif_variation for y in self.line_ids]) + sum([y.maq_variation for y in self.line_ids])        
             
-            self.total_variation_real = (total_real/cantidad_esperada)*cantidad_total
-            self.total_variation_standard = (total_standard/cantidad_esperada)*cantidad_total
-            self.total_variation_standard = total_variation
+       #     self.total_variation_real = (total_real/cantidad_esperada)*cantidad_total
+       #     self.total_variation_standard = (total_standard/cantidad_esperada)*cantidad_total
+       #     self.total_variation_variation = total_variation
 
         return {
             'type': 'ir.actions.act_window',

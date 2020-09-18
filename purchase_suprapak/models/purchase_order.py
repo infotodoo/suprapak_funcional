@@ -54,7 +54,32 @@ class PurchaseOrder(models.Model):
                 _logger.error("****************\ncrossovered_budget_line: ")
                 _logger.error(record.name)
                 total = 0
-                if record.general_budget_id:
+                if record.general_budget_id and record.analytic_account_id:
+                    dic =  {}
+                    account_ids = record.general_budget_id.account_ids.ids
+
+                    if line.product_account.id in account_ids:
+                        _logger.error("\ncuenta encontrada: ")
+                        purchase_ids = self.env['purchase.order.line'].search([('product_account','in',account_ids),
+                            ('date_planned','>=',record.date_from),('date_planned','<=',record.date_to),('account_analytic_id','=',record.analytic_account_id.id)])
+                        _logger.error(purchase_ids)
+
+                        for purchase_obj in purchase_ids: 
+                            if purchase_obj.order_id.state == 'purchase' or purchase_obj.order_id.state == 'done': 
+                                total += purchase_obj.price_subtotal
+                                dic['total'] = total 
+                                print('Total ordenes confirmadas:',dic['total']) 
+                                dic['date'] = purchase_obj.date_planned
+                        _logger.error(total)    
+                        if self.date_order.date() >= record.date_from and self.date_order.date() <= record.date_to:
+                            for line2 in self.order_line:
+                                if line2.product_account.id in account_ids:
+                                    total += line.price_subtotal
+                        _logger.error(total) 
+                        if total > record.planned_amount:
+                            return False
+
+                elif record.general_budget_id:
                     dic =  {}
                     account_ids = record.general_budget_id.account_ids.ids
 
@@ -78,8 +103,8 @@ class PurchaseOrder(models.Model):
                         _logger.error(total) 
                         if total > record.planned_amount:
                             return False
-                        """for account in account_ids:
-                            dic['account'] = account"""
+                    """for account in account_ids:
+                        dic['account'] = account"""
         return True
 
     """def validation_budget(self, dic):

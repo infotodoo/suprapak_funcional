@@ -34,6 +34,7 @@
                             </group>
                             <group>
                                 <field name="journal_id" attrs="{'readonly': [('state','=','accounted')]}"/>
+                                <field name="action" domain="[[&quot;name&quot;,&quot;=&quot;,&quot;Generar asientos final de mes&quot;]]" groups="mrp_suprapak.group_generate_assents_line"/>
                             <!--    <field name="total_variation_standard"/>
                                 <field name="total_variation_real"/>
                                 <field name="total_variation_variation"/>-->

@@ -2,6 +2,7 @@ from odoo import fields,models,api
 
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
+    
     out = fields.Boolean(compute='_compute_out')
     exportation_billing = fields.Char('Number of Exportation Billing')
     logistic_operator_id = fields.Many2one('logistic.operator','Logistic Operator') 

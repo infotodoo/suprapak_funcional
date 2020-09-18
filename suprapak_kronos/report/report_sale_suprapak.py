@@ -24,7 +24,7 @@ class SaleSuprapak(models.Model):
 
     def programing_meters(self):
         programming_meter = 0
-        kronos_id = self.env['data.sheet'].search([('name', '=', self.sheet_id.name)])
+        kronos_id = self.env['data.sheet'].search([('name', '=', self.sheet_id.name)],limit=1)
         if kronos_id.uom_id.name == 'Unidades':
             if len(kronos_id.print_color_ids) > 6:
                 programming = int(int(kronos_id.quantity) / kronos_id.uds_m)
