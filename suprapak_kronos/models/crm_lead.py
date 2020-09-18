@@ -24,6 +24,9 @@ class CrmLead(models.Model):
             raise AccessDenied(("Debe seleccionar la moneda y el codigo del producto"))
         if not self.product_code :
             raise AccessDenied(("Debe seleccionar la moneda y el codigo del producto"))
+        partner_id = self.partner_id.ref
+        if not partner_id:
+            raise AccessDenied(("El codigo del Cliente debe estar diligenciado"))
 
     def _compute_sheet_data(self):
         for lead in self:

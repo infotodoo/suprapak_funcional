@@ -6,10 +6,18 @@
             <field name="arch" type="xml">
                 <form string="Pantone">
                     <group class="oe_title">
-                        <field name="pantone_id"/>
+                        <group>
+                            <field name="pantone_id"/>
+                        </group>
+                        <group>
+                            <field name="paticipation"/> 
+                        </group>
+                        <group>
+                            <field name="bcm"/>
+                        </group>
                     </group>
                     <footer>
-                        <button string="Confirm"/>
+                        <button name="test" type="object" string="Confirm"/>
                     </footer>
                 </form>
             </field>
@@ -24,4 +32,3 @@
             <field name="target">new</field>
         </record>
 </odoo>
-

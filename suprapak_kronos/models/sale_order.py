@@ -7,6 +7,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     sheet_id = fields.Many2one('data.sheet', 'Sheet')
+    client_order_ref = fields.Char('Order to Requisition')
 
 
 class SaleOrderLine(models.Model):

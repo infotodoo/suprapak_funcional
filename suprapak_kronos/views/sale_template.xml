@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
     <template id="report_saleorder_document_inherit_sale_supra" inherit_id="sale.report_saleorder_document">
+        <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
         <xpath expr="//th[@name='th_quantity']" positon="before">
            <th name="th_material" class="text-right">Material</th>
              <th name="th_drawn_type" class="text-right">Drawn Type</th>
